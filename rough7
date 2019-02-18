@@ -3,21 +3,19 @@ What is SQL Profiler?
 SQL Server profiler is a Tool which 
 helps to capture SQL Statement 
 execution Events on SQL Server. It 
-listen from the back-end and catures 
+listens from the back-end and captures 
 the Events on the database. It is often
-used for debugging to know what kind if
-select query is being fired and what 
-kind of data is being sent to SQL 
-Queries.
+used for debugging to know what kind of
+query is being fired and what 
+kind of data is being sent.
 
 SQL Profiler is used to improve SQL 
 Server performance when used in 
 conjunction with the Tuning Advisor.
 
 SQL Server performance largely depends 
-on how you have created the index i.e 
-your cluster index and non cluster 
-index.
+on how you have created the cluster 
+and non cluster index.
 
 In a recent project I worked on, the 
 database had the regular default Index 
@@ -43,41 +41,43 @@ then SQL Server profiler, Connect, and
 Run to start capturing Events happening
 on the database. 
 
-I then executed the most common type of
-SQL queries that gets fired on these 
-tables, SELECT Customer_ID FROM 
-Customer ... SELECT Company_ID FROM 
-Company ... to generate a work load.
+To generate a work load I executed 
+the most common type of SQL query
+that gets fired on the table,
+SELECT Customer_ID FROM Customer...
 
-The SQL Profiler trace captured the 
-Queries but also captured other SQL 
+The SQL Profiler Trace, captured the 
+Queries but it also captured other SQL 
 Statements fired by the Report Server, 
 Notificationing SQL statements and so 
 forth.
 
-In order to remove the noise of tracing
+In order to remove the noise of Tracing
 other Events, I filtered them out by 
 selecting the Tuning Template and in 
 the Events Selection tab chose the 
 Events I was interested in and also 
-set the Columns Filter database and the
-specific tables, in this case the 
-Customer and Company tables.
+set the Columns Filter to the 
+database I was interested in.
 
 The Trace results showed the work load 
 duration on each statement in the query
-, the Server Process Identifiers 
-(SPIDs), and other information to help 
-assess the work load.
+and other information that would help 
+to assess and analyse the work load.
 
 I finally saved the work load as a 
 Trace File and then ran the Tuning 
 Advisor on the work load to get and 
 analysis suggestions. 
 
-Remember, do stop the SQL Profiler or 
+According to the Microsoft website,
+SQL Profiler has now been deprecated,
+and we are advised to phase it out.
+
+One more thing, please do remember, 
+too stop the SQL Profiler or 
 it would drain resources if allowed to 
-continue capturing Events.
+continue capturing Events. 
 
 
 
