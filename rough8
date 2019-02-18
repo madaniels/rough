@@ -8,7 +8,7 @@ to rows in a table. It is similar
 to the way a book index helps you 
 find information quickly.
 
-There are many differet types of
+There are many different types of
 Indexes but I have worked mainly
 with Clustered and Non Clustered 
 Indexes which are similar to a book. 
@@ -17,13 +17,6 @@ The Page-numbers represents the
 Clustered Index and the Book Index
 at the back of the book represents
 the Non-Clustered Index.
-
-Indexes tell you where to find 
-things, in this case, the data. 
-Without the Index on a book you 
-would have to potentially search 
-through every page to find what 
-you're looking for. 
 
 Indexes in SQL Server provides a 
 shortcut to finding data quickly 
@@ -43,13 +36,9 @@ ensures that Indexes are
 created to help performance.
 
 Most of the time Clustered 
-Indexes are the Primary Keys. 
-Clustered Indexes causes all 
-the data within the table to be
-stored within the order in which
-the Index is defined. So, a 
-Clustered Index automatically 
-sorts the data. 
+Indexes are the Primary Keys
+and it automatically sorts the 
+data when it is created. 
 
 Only 1 Clustered Index is 
 allowed per table. No extra 
@@ -68,34 +57,39 @@ compared to the Non-Clustered
 Index and book index which 
 requires additional pages. 
 
-So when I want to do a search on a 
-specific Customer, I do a SELECT 
-statement on the column that has a 
-Clustered Index, for example 
-CustomerID. SQL Server then goes 
+In a recent project I worked on
+the requirement was enable 
+searches on specific Customers 
+using a SELECT statement on the 
+CustomerID column that had the 
+Clustered Index. 
+
+In the background, the Clustered
+Index enabled SQL Server to go 
 directly to that CustomerID to 
 retrieve the row because the 
-CustomerID Index is in the same 
+CustomerID Index was in the same 
 row as the data for that Customer, 
 similar to the book page-number 
 being on the same page as the 
 rest of the data. 
 
 Except when creating a Unique 
-Constraint on a table column, 
+Key Constraint on a table column, 
 Non-Clustered Indexes are created 
-manually. A Non-Clustered Index 
+manually. 
+
+A Non-Clustered Index 
 is not sorted but it leaves a 
 hint/pointer to where to find the 
 address of the next record. There 
-can be more than one per table. 
+can be more than one Non-
+Clustered  Index per table. 
 
-Insert and update operations are 
-quicker than with a Clustered 
-index. Extra storage space is 
-needed because the data and 
-Index are not stored in the 
-same place. Like the book 
+The Non-Clustered Index requires
+extra storage space because the
+data and the Index are not stored
+in the same place. Like the book 
 analogy, the index and data are 
 in different places 
 (at the back of the book) - 
@@ -103,17 +97,19 @@ so when you update the data
 you need to update the Index 
 as well.
 
-I usually use a Non-Clustered 
-Index on columns where the values 
-are constantly changing, 
+During a recent project, I used
+used Non-Clustered Indexes on
+columns where the values 
+were constantly changing, 
 requiring regular Updates or 
 Inserts. This way SQL Server 
 only has to update the pointers 
 that reference the data, but it 
 can put the actual data wherever 
 there is available space on disk. 
-This makes Updates using a 
-Non-Clustered Index is faster 
+
+This makes Updates while using a 
+Non-Clustered Index faster 
 than when using a Clustered Index 
 because in a Clustered Index the 
 data has to be rearranged in the 
@@ -121,4 +117,18 @@ correct order as well, potentially
 resulting in a myriad of 
 operations to shift the data around.
 
-So that is, Clustered and Non-Clustered Indexes.
+So in Summary, Indexes are essential 
+to performance enhancement but a good
+aessement of the effect of any Index 
+must be taken, when choosing the type 
+of Index needed for the business need.
+
+
+
+
+
+
+
+
+
+
