@@ -1,0 +1,89 @@
+The Differences between the Primary 
+Key and Unique Key
+
+First I'll discuss the similarities:
+The Primary Key and Unique Key are 
+very similar in that they both 
+provide uniqueness to each row in a 
+table, so they don't allow duplicates 
+in columns that have a Primary Key or 
+Unique Key constraint applied to it. 
+Both, the Primary Key and Unique Key 
+can use Composite Keys, in other words, 
+the Key is created by more than one 
+column to ensure uniqueness.
+
+Those were the similarities.
+
+The differences are:
+The Primary Key column does not allow 
+NULL values whereas a Unique Key 
+column allows just one NULL value. 
+
+A Primary Key Constraint on a column 
+automatically gets a Clustered Index 
+when created, while a Unique Key 
+Constraint on a column is assigned a 
+Non-Clustered Index. 
+
+Primary Key values cannot be changed 
+or deleted but Unique Key values can 
+be changed.
+
+In one project, while creating a 
+customer table, I found that there 
+were 2 customers from the same family 
+(mother-daughter) with the same 
+FirstName, LastName, Address, and they
+even had the same PhoneNumber. So when 
+their details were entered into the 
+table, we needed to be able to 
+distinguish between the 2 customers, 
+and in line with best practices, the 
+table had a Primary Key constraint on it, 
+and in this case, applied to the the ID 
+column, this made it possible to 
+distinguish between the mother and 
+daughter because the mother now had a 
+different Customer ID than her daughter, 
+even though they had identical personal 
+details.
+
+Of course one might argue that a social 
+security number or emailaddress could 
+make excellent Primary Keys but these 
+can change because sometimes people are 
+victims of crimes and need these 
+personal details to be changed or 
+deleted, so it might be a better option 
+to just put Unique Constraints on these 
+columns, allowing for changes and 
+deletions, if needed.
+
+A Unique Key is useful if you have a 
+list of unique items in a column and 
+require the user to select one item 
+from the list, one of which is a NULL. 
+So if you need to choose from a list of 
+Titles like Mr. Miss, Dr, Professor, 
+and NULL, you can choose null if your 
+Title is not in the list or maybe you 
+just don't like Titles. 
+
+So the Unique Key Constraint on that 
+column gives a developer the option of 
+NULL without needing to code for it.
+
+The Primary Key does not provide that
+option.
+
+
+
+
+
+
+
+
+
+
+
