@@ -1,0 +1,10 @@
+What is a Scalar User Defined Function_Can you give an example
+
+Like functions in programming languages, SQL Server user-defined functions are routines that accept parameters, 
+perform an action, such as a complex calculation, and return the result of that action as a value. 
+The return value can either be a single scalar value or a result set.
+User-defined scalar functions return a single data value of the type defined in the RETURNS clause. 
+For an inline scalar function, there is no function body; the scalar value is the result of a 
+single statement. For a multistatement scalar function, the function body, defined in a 
+BEGIN...END block, contains a series of Transact-SQL statements that return the single value. 
+The return type can be any data type except text, ntext, image, cursor, and timestamp.
