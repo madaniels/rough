@@ -1,0 +1,6 @@
+What is Identity?
+
+The Identity property creates an identity column in a table.  A new incremental number is automatically generated   
+for each new row that is inserted into a table. This table Identity property takes 2 arguments, the starting seed value and
+a number value to increment the seed by. So if you decide to start numbering at 100 and increment by 2, 100 is the seed
+and 2 is the increment. In other words, your row numbers would start at 100 and the next row Identity number would be 102, and the next 104, 106, etc
