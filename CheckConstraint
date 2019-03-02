@@ -1,0 +1,9 @@
+What is Check Constraint?
+
+CHECK constraints enforce domain integrity by limiting the values that are accepted by one or more columns. You can create a CHECK constraint with any logical (Boolean) expression that returns TRUE or FALSE based on the logical operators. For example, the range of values for a salary column can be limited by creating a CHECK constraint that allows for only data that ranges from $15,000 through $100,000. This prevents salaries from being entered beyond the regular salary range. The logical expression would be the following: salary >= 15000 AND salary <= 100000.
+
+You can apply multiple CHECK constraints to a single column. You can also apply a single CHECK constraint to multiple columns by creating it at the table level. 
+
+In a previous project I worked on, the requirement was for a multiple-column CHECK constraint to be used to confirm that any row with a country_region column value of USA also had a two-character value in the state column. This allowed for multiple conditions to be checked in one location.
+
+CHECK constraints are similar to FOREIGN KEY constraints in that they control the values that are put in a column. The difference is in how they determine which values are valid: FOREIGN KEY constraints obtain the list of valid values from another table, while CHECK constraints determine the valid values from a logical expression.
