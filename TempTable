@@ -1,0 +1,23 @@
+What is the difference between a Global and Temp Table:
+
+Both the Global and Temp Tables are used for the purpose of temporary data storage in the SQL Server tempdb database.
+
+I will discuss 2 types of Temp Tables, the Local Temp Table, the Global Temp Table and compare them with the Table Variable. 
+
+Both types of Temp Tables are created the way regular tables are created, except that the Local Temp Table Name is prefixed with one hash signs (#) and the Global Temp Table Name is prefixed with 2 hash signs (##).
+
+The Temp Table supports DML Statements like SELECT, INSERT, UPDATE, DELETE as well as DDL Statements like CREATE, DROP, and ALTER.
+
+The Temp Table supports both Clustered and Non-Clustered Indexes.
+
+A Temp Table cannot be used inside a User Defined Function (UDF).
+
+Once the Local Temp Table is created, it is available within the current open session. So only 1 session has access to the Local Temp Table. When the session is closed, the Temp Table is destroyed. 
+
+The Global Temp Table is available to all currently active sessions. It is destroyed after the last session accessing it, closes.
+
+If a Temp Table is created inside a Store Procedure, it is dropped when the Stored Procedure ends, and does not persist for the duration of the session connection to the database. 
+
+One of my recent projects had a Complex Query that dealt with a large volume of data which needed indexing, and statistics in order for the Query Optimizer to estimate a more accurate execution plan, before eventually moving this large dataset to a new, regular table.
+
+The Temp Table was perfect for this purpose and I could also access the data a bunch of times without having to make many database calls, which would have taken up time and resources.
