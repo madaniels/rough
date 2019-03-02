@@ -1,0 +1,15 @@
+How do you optimize SQL Queries?
+
+Learning how to index properly is the best thing you can do to improve the performance of your SQL queries. Indexes allow for quicker access to the database in typical situations. Database novices often find indexes mysterious or difficult. They either index nothing or they try to index everything. Of course, neither of these approaches is right. With no indexes at all, your queries are likely to be slow. If you index everything, your updates and insert triggers will be inefficient.
+
+Only Retrieve the Data You Really Need. A common way of retrieving the desired columns is to use the * symbol even though not all the columns are really needed.
+
+If the table is small, retrieving additional columns won’t make much of a difference. For larger data sets, however, specifying the columns might save a lot of computation time.
+
+If you only need a limited number of rows you should use the LIMIT clause (or your database’s equivalent). Take a look at the following code.
+
+Functions are a handy way to provide complex tasks and they can be used both in the SELECT clause and in the WHERE clause. Nevertheless, their application in WHERE clauses may result in major performance issues.
+
+Avoid Wildcard Characters at the Beginning of a LIKE Pattern because it prevent the database from using a suitable index if such exists. Since the system doesn’t know what the beginning of the name column is, it will have to perform a full table scan anyway. In many cases, this may slow the query execution. 
+
+The performance of your SQL queries depends on multiple factors, including your database model, the indexes available and the kind of information you wish to retrieve. The best way to keep track of what’s happening with your queries is to analyse the execution plan produced by the optimizer.
