@@ -1,0 +1,5 @@
+What is SQL Server Agent?
+
+SQL Server Agent, is a Microsoft SQL Server tool that enables the DBA to schedule automated jobs like backups, reporting jobs, and so forth.
+
+SQL Agent jobs are a series of steps that use a graphical user interface (GUI) wizard, allowing DBAs to set up jobs comprised of a complex series of tasks. After setting up a job, the DBA can schedule an execution frequency like one-time only, daily, weekly or monthly.
