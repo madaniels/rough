@@ -1,0 +1,7 @@
+What is Unique key Constraint?
+
+UNIQUE constraints is a constraint that can be used to enforce data integrity in SQL Server tables. These are rules that the SQL Server Database Engine enforces. A single NULL value is allowed and it can be referenced by a FOREIGN KEY constraint. A Non-Clustered Index is created by default to enforce the UNIQUE constraint unless a clustered index is explicitly specified, a unique, .
+
+In a previous project I used a UNIQUE constraint to make sure no duplicate values were entered into certain columns. The Unique Key Constraint allowed me to enforce uniqueness to more than one column in a table, so I had the Primary Key CustomerID that was unique and by using the Unique Kye Constraint, I enforced uniqueness for the email and social security number columns in the same table.
+
+I also took advantage of the single NULL value that the it availed and for any dropdown lists in an application, it provided an ideal default value.
