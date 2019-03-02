@@ -1,0 +1,11 @@
+What is Stored Procedure?
+
+A stored procedure in SQL Server is a group of one or more Transact-SQL statements. They Accept input parameters and return multiple values in the form of output parameters to the calling program.
+
+Contain programming statements that perform operations in the database. These include calling other procedures.
+
+Return a status value to a calling program to indicate success or failure (and the reason for failure).
+
+Stored Procedures reduces server / client network traffic. The commands in a procedure are executed as a single batch of code. This can significantly reduce network traffic between the server and client because only the call to execute the procedure is sent across the network. Without the code encapsulation provided by a procedure, every individual line of code would have to cross the network.
+
+Multiple users and client programs can perform operations on underlying database objects through a procedure, even if the users and programs do not have direct permissions on those underlying objects.
