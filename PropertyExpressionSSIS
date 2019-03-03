@@ -1,0 +1,6 @@
+What is a property expression in SSIS? (https://www.red-gate.com/simple-talk/sql/ssis/working-with-property-expressions-in-sql-server-integration-services/)
+
+SQL Server Integration Services (SSIS) provides a number of advanced features that support the efficient development and deployment of SSIS packages. One of these features is the property expression, which lets you dynamically update a property value at runtime. For example, you can use a property expression to define the connection string of an OLE DB connection manager. That way, the connection to the data source can be generated dynamically at run time, letting you connect to different data sources without needing to reconfigure your package each time the data source changes.
+
+Creating Property Expressions
+The process of creating a property expression is very straightforward. You can add an expression to any read/write property in most of a package’s objects, which includes the package itself, the containers and tasks in the control flow, connection managers, event handlers, and log providers. As you’ll see later in the article, you can also add expressions to some of the properties in data flow components, but this functionality is much more limited than the control flow.
