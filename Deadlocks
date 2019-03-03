@@ -1,4 +1,4 @@
-What is a deadlock?
+What is a deadlock? (https://www.mssqltips.com/sqlservertutorial/252/tracing-a-sql-server-deadlock/)
 
 A common issue with SQL Server is deadlocks.  A deadlock occurs when two or more processes are waiting on the same resource and each process is waiting on the other process to complete before moving forward.  When this situation occurs and there is no way for these processes to resolve the conflict, SQL Server will choose one of processes as the deadlock victim and rollback that process, so the other process or processes can move forward.
 
