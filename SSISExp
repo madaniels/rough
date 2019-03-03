@@ -1,0 +1,14 @@
+Tell me about your SSIS experience:
+
+I've worked as a Power BI Developer for 2 years and a BI Developer for 3 years, I've worked on SSIS and Developed Integration Services (SSIS) packages for extracting data from Flat Files, XML files, CSV files, Excel files, SQL Server, and Transformed and Loaded the data to a data warehouse.
+
+In a previous project I worked on, I developed SSIS packages to bring data from existing OLTP databases to the new data warehouse by performing different transformations like lookup transformations, merge joins, derived columns, conditional split, and data conversion with multiple data flow tasks.
+
+I implemented Various Error handling and Event Handling Techniques in SSIS to ensure efficient package execution. I developed logs for the ETL load at package level and task level to log the number of records processed by each package and each task in a package using SSIS. I developed SSIS jobs and scheduled packages using SQL server management studio for the daily load.
+
+I designed packages Using Control Flow Tasks like For Loop Container, For Each Loop Container, Sequential Container, Execute SQL Task and Data Flow Tasks.
+
+Created stored procedures, triggers, user-defined functions, views handling business logic and functionality of various modules.
+Performed maintenance duties like performance tuning and optimization of queries, functions and stored procedures
+
+Established referential integrity, data consistency, indexing and data cleanup procedures to maintain high quality data that can be used for reporting
