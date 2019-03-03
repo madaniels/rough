@@ -1,0 +1,37 @@
+How do you load XML files?
+
+To explain How do you load XML files, I would like to tell you about a recent project I worked on where the requirement was to load multiple XML files to SQL Server using SSIS.
+
+I did this for both denormalized XML files and normalized files that had complex structures. 
+
+My preference was to go with the denormalized XML file structure because denormalizing the file makes the process a lot faster because the normalized XML file required additional steps.
+
+But I'll explain the normalized version first and if there's time I'll explain the denormalized version.
+
+So, first I:
+Created a new SSIS package. 
+Placed a new Data Flow Task in the Control Flow
+Opened the Data Flow Task.
+Placed an XML Source tool, a Data Conversion tool, and OLE DB Destination tool in the Data Flow.
+
+I then:
+Opened the XML Source Editor 
+Chose "XML file location" as the Data Access Mode, 
+Browsed to the location of the XML file. 
+
+I chose to Generate a new XSD for the XML schema definition because I didn't have one.
+
+Still in the XML Source Editor and from the Columns tab and "Output Name" drop down list, I chose each Node, Borrower, Financial_Detail, Property_Detail, or Loan_Detail respectively, and selected the columns that had to be inserted into each staging table.
+
+Next is the Data conversion Transformation.
+Here I modified the data types of the output columns according to the data types of the OLE DB Destination. 
+
+Finally on to configure the OLE DB Destination.
+While in the OLE DB Destination Editor, I created a new Connection Manager.
+Selected the Name of the destination Table from Drop down list.
+
+And, in the Mapping’s tab, mapped each Output column with the appropriate Input column and made sure I chose the correct Alias according to the Data Conversion I had previously done.
+
+
+I gave the package a name according to proper naming convention and
+Executed the package. This loaded the data into the respective SQL Server Staging tables.
