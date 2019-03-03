@@ -1,0 +1,33 @@
+What is Multicast, Merge Join, and Conditional Split?
+
+The Multicast Transformation is used to create and distribute exact copies of a source dataset to one or more destinations.
+
+The Conditional Split transformation routes data to different outputs based on the evaluation of specified expressions. In other words, the Conditional Split Transformation directs the data to an evaluated output. In addition, it also has a default output, so if a row doesn't match an expression, it is directed to the default output.
+
+The Merge-Join Transformation can be used to Join two sorted data sources based on Inner Join, Left Outer, or Full Outer Join and it combines data from different sources into a single output. It is similar to the SQL Inner, Left and Full Joins. The Merge Join combines data based on matching keys and accepts only 2 sorted inputs.
+
+In a recent project one of the requirements was to use a single SSIS package to load data from 3 different sources, OLEDB, Excel, and XML.
+
+All required information had to be in the format that is acceptable to an OLAP database for reporting.
+
+After configuring the OLEDB data source, I decided on the Conditional Split because this allowed me to validate the incoming Staging data for required fields, data types, NULL rows, and other types of validations, and route the data to various destinations, for further review and validation. So, phone number errors went to a different flat file to the SSN errors's, and I routed Zip code errors to its own flat file destinations, and so forth.
+
+In the Conditional Split Transformation Editor I mostly used the ISNULL and LEN functions as Condition Expressions to detect NULL values, to assess whether SSNs had 9 digits, whether phone numbers had 10 digits, and whether Zip codes had between 5 and 10 digits, and these were each sent to their respective flat file destinations, with the default accepting other NULL rows, and the GOOD data being output for Data Conversion and its Destination database.
+
+I then used a Multicast tool to load copies of the GOOD Data to different destination database Tables.
+
+Working on the same project but a different package, the requirement was to produce a report that had a Customer Name, Phone, and Monetory Value. 
+
+Now, the data was in seperate databases but they had a related ID column which meant that I could use the Merge JOIN to combine the 2 tables.
+
+It wasn't clear whether the data was sorted in both tables so I used the Sort Transformation between the OLEDB Source and Merge JOIN. The Merge JOIN requires Sorted data.
+
+The Merge JOIN gave the option of Left, Inner, or Full JOINS, and for this requirement I went with the Inner JOIN, which I JOINED on the ID Key, and then chose the relevent columns and mapped to a Flat File Destination.
+
+In summary, the Conditional Split Transformation allowed me to identify and reroute the Bad Data to destination files which were then emailed back to the client for correction. 
+
+The Multicast Transformation allowed me to send copies of the Good data to an OLAP Destination database and to Quality Control for testing.
+
+In a seperate package I was able glean an adhoc Report from 2 tables that were from different databases, using the Merge JOIN.
+
+These are the Multicast, Merge Join, and Conditional Split Transformations.
