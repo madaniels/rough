@@ -14,7 +14,7 @@ While developing these metrices, I have gained experience with DAX to create num
 
 Working as a Business Intelligence Developer for Cardinal Financial, I have gained good experience using SQL Server 2014 & 2017, Visual Studio 2013 & 2017. Using T-SQL, I have created Tables, Views, User Defined Functions, Common Table Expressions, Temporary tables, Indexes, Stored Procedures, Triggers and so forth.
 
-As an ETL developer I have experience building ETL solutions for numerous projects. I have worked with various data sources such as Object Linking and Embedding, Database (OLEDB), Excel, XML, flat files such as .txt and .csv files. I’ve extracted and transformed data using various Control flow and Data flow components such as Execute SQL Task, Script task, Send Mail task, Foreach Loop and Sequence containers.
+As an ETL developer I have experience building ETL solutions for numerous projects. I have worked with various data sources such as Object Linking and Embedding, Database (OLEDB), Excel, XML, flat files such as .txt and .csv files. I’ve extracted and transformed data using various Control flow and Data flow components such as Execute SQL Task, Script task, Send Mail task, Foreach Loop and Sequence containers. 
 
 I’ve used Transformations like the Conditional Split, Derived Column, Merge, Multicast, Lookup, Sort, Data Conversion, Union All, and so forth. For the various data destinations, I used the OLEDB, Excel, and Flat File destination transformations. I have applied error handling measures, optimized slowly running packages and troubleshooted failed packages. 
 
