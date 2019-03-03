@@ -1,0 +1,54 @@
+What is the differences between UNION All and Merge?
+
+The Merge Transformation can only accept two datasets but the Union All Transformation can accept more than two datasets for the input.
+ 
+
+Merge requires both input datasets to be sorted but Union All does not require the datasets to be sorted.
+
+
+In a recent project one of the requirements was to use a single SSIS package to load data from 3 different sources,
+ OLEDB,
+ Excel,
+ and XML.
+
+
+I combined all 3 sources with the UNION All tool because the Merge Transformation could take only 2 sources.
+ 
+
+So,
+ I first did a data Conversion for each,
+ seperately,
+ and in the Excel Data Conversion Transformation Editor I selected the relevent columns and converted the Excel Unicode data types to ones compatible with SQL Server.
+ 
+In this case the data Conversions were mainly to Strings,
+ 4-byte signed Integers,
+ and the database timestamp.
+ 
+
+I also did a Data Conversion on the Unicode data format coming from the XML source.
+
+
+I then used the UNION All tool to combine the OLTP,
+ Excel and XML data.
+ This worked well.
+
+
+Following the combining of all 3 sources I could load them into an OLEDB Destination table.
+
+
+In a similar project,
+ with 2 sources,
+ the input data was not sorted and the output data needed sorting for a report.
+ I could not take advantage of the efficiency of using a Union All Transformation so I had to go with a Merge Transformation,
+ which required Sorting before the Merge.
+ Fortunately the volume of data was small.
+
+
+Now,
+ doing the Sorting in SSIS on large volumes of data is inadvisable but you can Sort the data prior to SSIS Transformations and there'll be no need for a Sort .
+ You simple have to Sort the data and let SSIS know via the OLEDB Advanced Editor and set the IsSorted to true and set the SortKeyPosition position.
+
+
+So choose Union All over Merge when: the transformation inputs are not sorted,
+ the combined output does not need to be sorted,
+ the transformation has more than two inputs.
