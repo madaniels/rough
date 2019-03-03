@@ -1,0 +1,153 @@
+How do you load multiple files in EXCEL:
+
+When dealing with SSIS packages and Excel files it's important remember to go to 
+disable the 64-bit Runtime mode because an XLS file runs in a 32-bit Runtime mode.
+ To load multiple Excel files in SSIS,
+ the for each loop comes in handy,
+ so I will be discussing that today.
+
+
+In a recent project I worked on,
+ the requirement was to load numerous Excel files into a single destination table.
+ The file names had the format of EMP_1.
+xls.
+
+
+First I set the project's 64-bit Runtime mode to False,
+ and then I declared a variable and named it FILEPATH,
+ all caps for easy identification.
+ The data type I set to String and initialized it with the value of the full 
+ path to the Excel file + the full file name of the first file,
+ EMP_1.
+xls.
+ 
+
+I then placed a Foreach Loop Container into the Control Flow and in the 
+Foreach Loop Editor I opened the Collection tab and for the Enumerator 
+property I selected "Foreach File Enumerator".
+ For the "Folder" property I Browsed to the Root folder where all the 
+ source files were located,
+ and assigned it that path.
+ For the "Files" property I defined it as being EMP_*.
+xls,
+ because all the relevant files started with EMP_ and had an unknown 
+ number at the end for which I used a wild-card asterixs (*) symbol.
+ I selected "Fully qualified" file name to be retrieved,
+ and checked the "Traverse Subfolders" option because there were also 
+ files in a subfolder that needed to be included in the load.
+
+
+In the Variable Mapping tab I mapped it to the FILEPATH variable.
+
+
+Next,
+ I embedded a Data Flow Task in the Foreach Loop Container 
+ and in the Data Flow I placed Excel Source,
+ Data Conversion,
+ and OLE DB Destination tools.
+ 
+
+From the Excel Source Editor I created a new Excel Connection Manager,
+ assigned the Excel worksheet,
+ Previewed the data and made sure the columns were correct 
+ but I noticed spaces prefixing some of the Excel column names.
+ I knew that I could fix this in the process so I wasn't 
+ too concenred about that.
+
+
+In the Data Conversion Transformation Editor I selected the relevent 
+columns and converted the Excel Unicode data types to ones compatible 
+with SQL Server,
+ and gave them appropriate Aliases.
+ In this case they were mainly Strings,
+ 4-byte signed Integers,
+ and the database timestamp.
+
+
+In the OLE DB Destination Editor,
+ I created a new Connection Manager,
+ selected the relevent database table,
+ and ensured the Converted column Aliases were chosen to map to 
+ the correct destination columns.
+
+
+In conclusion,
+ I opened the Excel Property Expressions Editor chose the 
+ ExcelPath property from the dropdown list and assigend the 
+ FILEPATH variable Expression to the Excel Connection Manager.
+ This enabled the Excel Connection Manager to load 
+ multiple files dynamically.
+
+
+And finally I set the DelayValidation property of the 
+Foreach Loop to True because the foreach file loop process 
+loads multiple files dynamically during runtime,
+ so the validation had to occur later.
+
+
+This is how I loaded multiple EXCEL files into a single OLEDB database table.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+How do you load multiple files in EXCEL:
+
+When dealing with SSIS packages and Excel files it's important remember to go to disable the 64-bit Runtime mode because an XLS file runs in a 32-bit Runtime mode. To load multiple Excel files in SSIS, the for each loop comes in handy, so I will be discussing that today.
+
+In a recent project I worked on, the requirement was to load numerous Excel files into a single destination table. The file names had the format of EMP_1.xls.
+
+First I set the project's 64-bit Runtime mode to False, and then I declared a variable and named it FILEPATH, all caps for easy identification. The data type I set to String and initialized it with the value of the full path to the Excel file + the full file name of the first file, EMP_1.xls. 
+
+I then placed a Foreach Loop Container into the Control Flow and in the Foreach Loop Editor I opened the Collection tab and for the Enumerator property I selected "Foreach File Enumerator". For the "Folder" property I Browsed to the Root folder where all the source files were located, and assigned it that path. For the "Files" property I defined it as being EMP_*.xls, because all the relevant files started with EMP_ and had an unknown number at the end for which I used a wild-card asterixs (*) symbol. I selected "Fully qualified" file name to be retrieved, and checked the "Traverse Subfolders" option because there were also files in a subfolder that needed to be included in the load.
+
+In the Variable Mapping tab I mapped it to the FILEPATH variable.
+
+Next, I embedded a Data Flow Task in the Foreach Loop Container and in the Data Flow I placed Excel Source, Data Conversion, and OLE DB Destination tools. 
+
+From the Excel Source Editor I created a new Excel Connection Manager, assigned the Excel worksheet, Previewed the data and made sure the columns were correct but I noticed spaces prefixing some of the Excel column names. I knew that I could fix this in the process so I wasn't too concenred about that.
+
+In the Data Conversion Transformation Editor I selected the relevent columns and converted the Excel Unicode data types to ones compatible with SQL Server, and gave them appropriate Aliases. In this case they were mainly Strings, 4-byte signed Integers, and the database timestamp.
+
+In the OLE DB Destination Editor, I created a new Connection Manager, selected the relevent database table, and ensured the Converted column Aliases were chosen to map to the correct destination columns.
+
+In conclusion, I opened the Excel Property Expressions Editor chose the ExcelPath property from the dropdown list and assigend the FILEPATH variable Expression to the Excel Connection Manager. This enabled the Excel Connection Manager to load multiple files dynamically.
+
+And finally I set the DelayValidation property of the Foreach Loop to True because the foreach file loop process loads multiple files dynamically during runtime, so the validation had to occur later.
+
+This is how I loaded multiple EXCEL files into a single OLEDB database table.
