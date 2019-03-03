@@ -1,0 +1,31 @@
+Explain the different Isolation Levels:
+
+A transaction is characterized by four properties Atoemicity, Consistency, Isolation, and Durability, abbreviated as ACID. This guarantees the validity of the data in the event of errors, power failures, and concurrency.
+
+Setting Isolation Levels are a way of managing concurrency. It manages multiple simultaneous transactions.
+
+First, I'll discuss 3 challenges that Isolation Levels deal with during concurrency and show the need for Isolation Levels.
+
+The first challenge is with what is called "Dirty reads". 
+Transaction 1 updates a row. Transaction 2 reads the updated row before Transaction 1 commits it. If Transaction 1 rolls back the update, Transaction 2 will already have read the data and used bad data because the data was rolled back by Transaction 1.
+ 
+The second challenge is with "NonRepeatable reads". Transaction 1 reads a row. Transaction 2 updates or deletes and commits that row. If transaction 1 reads the row again, the row values will be different or deleted.
+
+The third challenge is with "Phantoms". Transaction 1 reads a set of rows that satisfy a search criteria. Transaction 2 then updates or inserts a new row that matches Transaction 1's search criteria. If Transaction 1 re-executes the search, it gets the new row as well. The row was like a ghost or Phantom in the initial search. 
+
+Moving on to the Isolation Levels:
+
+
+The first level we have is the "Read UnCommitted" Isolation Level which allows Dirty reads, NonRepeatable reads, and Phantoms. Remember that users will see the changes made by others because the Transactions are not isolated from each. 
+
+The Second Isolation Level, is "Read Committed" which allows for NonRepeatable reads and Phantoms. Here, only committed data is allowed thus preventing dirty reads. However data can still be modified by other transactions, so NonRepeatable Reads and Phantom Reads are still possible. Read Committed is also the default isolation level for SQL Server databases.
+
+The Third Level is the "Repeatable Read" which only allows for Phantoms. Here, only committed data is allowed, thus preventing dirty reads. Also, other transactions cannot modify the data being read by the current transaction, not until the current transaction completes. This eliminates NonRepeatable Reads. However, Inserts that match the current criteria allows for Phantom rows.
+
+The Fourth and final Isolation Level I'll discuss is the "Serializable" level. It does not allow Dirty reads, nor NonRepeatable reads, nor any Phantoms. Once again, only committed data is allowed. Data modifications and matching Inserts are not allowed until the Transaction is Committed. Despite providing the best Concurrency Isolation Management, this level can have the biggest negative impact on performance compared to the other isolation levels.
+
+One of the Requirements in a recent project was to build functionality that would allow a user to view consistant Stock pricing throughout the current Transaction they were engaged in while allowing any concurrent INSERTS of Stocks to be added.
+
+I used the REPEATABLE READ ISOLATION LEVEL in this case because it doesn't allow modifications to the current Transaction's data results until after the Transaction is committed, so any concurrent Updates are only viewable in a new Transaction execution, however, as mentioned before, it does allow matching new INSERT data to be viewed in the current Transaction's results.
+
+These are the 4 important Isolation Levels.
