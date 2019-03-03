@@ -1,0 +1,17 @@
+What is package configuration? What are the different types of package configuration? (https://docs.microsoft.com/en-us/sql/integration-services/package-configurations?view=sql-server-2014)
+
+A configuration is a property/value pair that you add to a completed package. Typically, you create a package set properties on the package objects during package development, and then add the configuration to the package. When the package runs, it gets the new values of the property from the configuration. For example, by using a configuration, you can change the connection string of a connection manager, or update the value of a variable.
+
+Package configurations provide the following benefits:
+
+Configurations make it easier to move packages from a development environment to a production environment. For example, a configuration can update the path of a source file, or change the name of a database or server.
+
+Configurations are useful when you deploy packages to many different servers. For example, a variable in the configuration for each deployed package can contain a different disk space value, and if the available disk space does not meet this value, the package does not run.
+
+Configurations make packages more flexible. For example, a configuration can update the value of a variable that is used in a property expression.
+
+Integration Services supports several different methods of storing package configurations, such as XML files, tables in a SQL Server database, and environment and package variables.
+
+Each configuration is a property/value pair. The XML configuration file and SQL Server configuration types can include multiple configurations.
+
+The configurations are included when you create a package deployment utility for installing packages. When you install the packages, the configurations can be updated as a step in the package installation.
