@@ -1,0 +1,10 @@
+Explain different levels of normalization
+
+In relational database design, the process of organizing data to minimize redundancy. Normalization usually involves dividing a database into two or more tables and defining relationships between the tables. The objective is to isolate data so that additions, deletions, and modifications of a fieldcan be made in just one table and then propagated through the rest of the database via the defined relationships.
+
+There are three main normal forms, each with increasing levels of normalization:
+
+First Normal Form (1NF):Each field in a table contains different information. For example, in an employee list, each table would contain only one birthdate field.
+Second Normal Form (2NF):Each field in a table that is not a determiner of the contents of another field must itself be a function of the other fields in the table.
+Third Normal Form (3NF): No duplicate information is permitted. So, for example, if two tables both require a birthdate field, the birthdate information would be separated into a separate table, and the two other tables would then access the birthdate information via an index field in the birthdate table. Any change to a birthdate would automatically be reflect in all tables that link to the birthdate table.
+There are additional normalization levels, such as Boyce Codd Normal Form (BCNF), fourth normal form (4NF) and fifth normal form (5NF). While normalization makes databases more efficient to maintain, they can also make them more complex because data is separated into so many different tables.
