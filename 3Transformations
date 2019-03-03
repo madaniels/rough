@@ -1,5 +1,92 @@
 Name 3 transformations you have used and how?
 
+I have used the Conditional Split,
+ Derived Column,
+ and the Lookup transformation tools in SSIS,
+ more frequently these among many others.
+
+
+The Conditional Split tool routes data rows to different outputs and the output that 
+each row goes to depends on whether it meets the specified conditions.
+ 
+
+The Derived Column tool creates new column values using transformation Expressions 
+which can be stored in a newly created column or existing column.
+
+
+The Lookup tool compares source data with existing the table dataset and 
+filters matching and un-matching data.
+
+
+For example: In a recent project I worked on,
+ the requirement was to retrieve data from an Excel file,
+ filter out rows that contained NULLS,
+ and either INSERT new rows or UPDATE any existing rows.
+ 
+
+I decided on the Conditional Split because this allowed me to route the NULL rows 
+to a different destination for further review and validation.
+
+
+In the Conditional Split Transformation Editor I used the ISNULL function as 
+the Condition Expression to detect NULL values,
+ and these rows I allocated as Bad Data with the default being Good Data.
+ 
+
+The Bad Data I routed to a Rowcount and then to a new column created with 
+the Derived Column tool,
+ and using a Multicast tool I could then load the Bad Data to Flat files and 
+ database Tables.
+
+
+Once again,
+ with the Good Data I could use the Derived Column to further manipulate 
+ the data and take the full name held in one column and split these into 
+ 2 or 3 separate new columns using a variety of String Functions like SubString,
+ FINDSTRING,
+ RTRIM,
+LTRIM,
+ and LEN functions.
+
+
+Following the Derived Column I used the Data Conversion tool and finally 
+on to the Lookup tool which we will discuss.
+
+
+I used the Lookup tool to Check for any matching records that existed in 
+the target database table and if there were any matches,
+ I rerouted those to an OLEDB Command where I coded an UPDATE for those matches.
+
+
+But the bulk of the data I loaded directly to the OLEDB Destination 
+tables as new INSERTS.
+
+
+In configuring the Lookup table I selected Full cache mode,
+ OLEDB Connection Manager,
+ the destination table,
+ and the column to do the Lookup on,
+ in this case the Full Name column was what I used because both Source and 
+ Destination had these columns and was ideal for a Lookup.
+
+
+
+These are the 3 frequently used transformations I have used.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Name 3 transformations you have used and how?
+
 I have used the Conditional Split, Derived Column, and the Lookup transformation tools in SSIS, more frequently these among many others.
 
 The Conditional Split tool routes data rows to different outputs and the output that each row goes to depends on whether it meets the specified conditions. 
