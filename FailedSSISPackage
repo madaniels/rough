@@ -1,0 +1,30 @@
+How do you trouble-shoot a failed SSIS package?
+
+During the SSIS development and even production phases errors reveal themselves and bugs creep into the code as the package grows in size. To help manage this inevitibility of errors in the Extraction, Transformation, or Loading phases, SSIS provides numerous techniques and tools to help make things easier.
+
+The first place I look to see what caused an error during run-time is the Progress tab which changes its name to Execution Results after stopping the Debugging the package. This tab provides information on virtually every step and highlights the error message with a red alert symbol.
+
+Much of the time though, the error alert symbol is usually found on the Transformation that is giving the problem in either the Data Flow, Control Flow, or Both, but getting the message about the error is found in the Progress/Execution Result tab.
+
+Other ways to Troubleshoot a failed package is to Recheck Mappings, Refresh Metadata, Check the database, make use of the DataViewer, set Breakpoints and use the Locals and Watch Windows, add a Rowcount tool to see if the number of rows are as expected, for failed VSTA Scripts make use of a script MessageBox, set SSIS logs and Enable Logging from the Menu under SSIS tab or Right-click in the Control Flow and choose Logging. In Production mode I make use of Event Handlers and Checkpoints, which are useful  when other tools are not available.
+
+In a recent project I made frequent use of the Execution Result tab, I used a MessageBox for Script errors, rechecked all Transformation Mappings, refreshed the Metadata, checked the database, made use of an EventHandler, and Logging.
+
+So after working at full speed to successfully get a project done on time, I came into the office the next day, ran the package that Loads data from the Staging database to the ODS database, one more time, to be sure all was good before showing the boss. 
+
+But my heart just sank when, while everything showed green for success upon execution, I could see that there was no data being loaded since the rowcounts were not showing.
+
+Fortunately my experience told me to check the database before touching a single thing in the SSIS package, and low and behold, the source database had been wiped clean due to a scheduled overnight task that I wasn't aware of.
+
+So of course that's why no rows were being loaded, but that was in fact a relief because all I needed to do was reload the Staging database from the previous Story the team had completed.
+
+Once the Staging data was reloaded I ran my package to load the data from the Staging database to the ODS database and it worked as it did when I left the office the day before. The lesson I learned was to troubleshoot the right stuff every time or you'll just be wasting time.
+
+Now, with regard to the Logging I used in the SSIS package before I had completed it: for the Configuration, I chose the "SSIS log provider for SQL Server" option to write the entries for OnError, OnPreValidate, OnPreExecute, and OnPostExecute events, to the SQL Server table called SysSSISLog.
+
+This logging table provided the same error messages that is found in the Execution Results tab, but the advantage of keeping a log is that I could now compare the current error with a previous one and see if the actions I take to fix the error are the correct ones or not. This is also useful for Production mode error detection and auditing.
+
+I could go on and explain how checkpoints are extremely valuable and saved me from having to run 3 very long phases of a package from running while fixing an error in the 4th phase, but that would take some more time.
+
+
+This is how I Troubleshoot Failed Packages.
