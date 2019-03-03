@@ -1,5 +1,115 @@
 Name 5 functions you have used in SSRS:
 
+The 5 functions I have used in SSRS are the COUNT(),
+ FORMAT(),
+ DATEPART(),
+ DATEDIFF(),
+ and the STRING_SPLIT().
+
+
+The COUNT function returns a count of non-null values that is specified 
+by the expression and evaluated in the specified or current scope.
+
+
+The FORMAT function,
+ takes 2 string parameters.
+ The first one is of the value you want to format and the second is the 
+ format you want it to be in,
+ for example,
+ if you want a date to display as MM/dd/yyyy,
+ you say Format(Date,
+ 'MM/dd/yyyy').
+ 
+
+The DATEPART function returns the number value of a date for example: 
+if you want just the year or day or month as a number.
+ DATEPART(YY,
+ LoanDate).
+
+
+The DATEDIFF function returns the number value of the 
+difference between 2 specified dates.
+ DATEDIFF(YY,
+ DOB,
+ CurrentDate).
+
+
+The STRING_SPLIT function splits a string into rows of substrings,
+ based on a specified separator character,
+ for example STRING_SPLIT (@LoanAmount, ',').
+
+
+In a recent project I worked on,
+ the requirement was to produce several 
+ Business Intelligence Analytical Reports on a week-to-date,
+ quarter-to-date and year-to-date basis so that the customer could 
+ manage their business process better.
+ They wanted to know the number of items sold ToDate,
+ for a particular year,
+ and the demographics like age,
+ Marital Status,
+ and so forth.
+
+ 
+To create the "number of items sold ToDate" Pie Chart Report,
+ and enable the user of the report to select any particular ToDate date,
+ I used the COUNT function to aggregate the number of items sold ToDate.
+ So the user could view the dates sales were made,
+ the number of items sold up to that date,
+ and also on any particular,
+ relevant date.
+
+
+For this same Report,
+ I used the FORMAT function to give the user a plain and simple date format 
+ that excluded the time portion and in the format of 'MM/dd/yyyy'.
+
+
+Now,
+ because the requirement was to produce a report for a particular year,
+ I used the DATEPART function to filter out dates which did not have a particular year.
+ SELECT Dates WHERE DATEPART(YY, Dates) = '2017'.
+
+
+For the Age demographic,
+ and because the database only held a date of birth and not the Age of a person,
+ I made use of the DATEDIFF function,
+ which calculated the difference between DOB and the ReportDate to give the Age of a person.
+ DATEDIFF(YY, DOB, @ReportDate)
+
+In each Report dropdownlist,
+ a Report user could make multiple selections,
+ so each Report Parameter could have a string of values seperated by a comma.
+
+
+So,
+ on the technical side,
+ for the Stored Procedure being used,
+ this is where the STRING_SPLIT function played an important role.
+ It split the string into rows based on the comma separator,
+ and this allowed a single parameter value to be identified correctly by the SP.
+ STRING_SPLIT (@LoanAmount, ',').
+
+
+These 5 functions played a major role in producing user friendly reports in SSRS.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Name 5 functions you have used in SSRS:
+
 The 5 functions I have used in SSRS are the COUNT(), FORMAT(), DATEPART(), DATEDIFF(), and the STRING_SPLIT().
 
 The COUNT function returns a count of non-null values that is specified by the expression and evaluated in the specified or current scope.
