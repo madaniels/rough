@@ -1,0 +1,113 @@
+The differences between TRUNCATE and DELETE
+
+Similarities
+TRUNCATE and DELETE cannot be used on a table that references a Foreign Key.
+ 
+
+DELETE Statement:
+Data Manipulation Language (DML) - SELECT,
+ INSERT,
+ UPDATE
+The DELETE statement activates triggers
+deletes rows one by one
+locks and logs
+more storage space
+rows retrievable
+If you do not want Deletion,
+ set the ROW LOCK to OFF
+
+
+TRUNCATE Statement:
+Data Definition Language (DDL)
+The truncate statement does not activate triggers
+locks and logs the page that is to be deallocated
+less storage space
+rows not retrievable
+does not remove table structure,
+ the columns,
+ constraints,
+ and indexes
+identity column
+If you do not want Truncation,
+ set the TABLE LOCK to OFF
+
+DELETE Statement retains the Identity Counter
+
+
+During a recent application I was developing,
+ I had to delete a few dozen unused colors from the page Color table and since I had a data copy of all 
+ the used colors,
+ I thought a table TRUNCATE would be faster and more efficient,
+ instead of searching for the unused colors and deleting only those from the table.
+ But then I noticed the ColorID Foreign Key Contraint placed on the User table.
+ I paused.
+
+
+As a general rule,
+ I make it a habit of first identifying any relationships other tables might have with the ones I am busy with,
+ before moving on.
+
+
+If I had gone ahead with the TRUNCATE TABLE option,
+ the Color table's Identity column would have been reset and inserting only the used colors would have changed 
+ the Identities or ColorID of each color because some had been deleted,
+ all Users would have lost their page Color preferences and would have had to choose their color preferences 
+ all over again.
+
+
+This was the perfect time to take the time needed and use the DELETE statement and WHERE Clause.
+
+
+These are a few of the main differences between DELETE and TRUNCATE.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The differences between TRUNCATE and DELETE
+
+Similarities
+TRUNCATE and DELETE cannot be used on a table that references a Foreign Key. 
+
+DELETE Statement:
+Data Manipulation Language (DML) - SELECT, INSERT, UPDATE
+The DELETE statement activates triggers
+deletes rows one by one
+locks and logs
+more storage space
+rows retrievable
+If you do not want Deletion, set the ROW LOCK to OFF
+
+
+TRUNCATE Statement:
+Data Definition Language (DDL)
+The truncate statement does not activate triggers
+locks and logs the page that is to be deallocated
+less storage space
+rows not retrievable
+does not remove table structure, the columns, constraints, and indexes
+identity column
+If you do not want Truncation, set the TABLE LOCK to OFF
+
+DELETE Statement retains the Identity Counter
+
+
+During a recent application I was developing, I had to delete a few dozen unused colors from the page Color table and since I had a data copy of all the used colors, I thought a table TRUNCATE would be faster and more efficient, instead of searching for the unused colors and deleting only those from the table. But then I noticed the ColorID Foreign Key Contraint placed on the User table. I paused.
+
+As a general rule, I make it a habit of first identifying any relationships other tables might have with the ones I am busy with, before moving on.
+
+If I had gone ahead with the TRUNCATE TABLE option, the Color table's Identity column would have been reset and inserting only the used colors would have changed the Identities or ColorID of each color because some had been deleted, all Users would have lost their page Color preferences and would have had to choose their color preferences all over again.
+
+This was the perfect time to take the time needed and use the DELETE statement and WHERE Clause.
+
+These are a few of the main differences between DELETE and TRUNCATE.
+
