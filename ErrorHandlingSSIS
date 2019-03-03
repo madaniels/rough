@@ -1,0 +1,11 @@
+How do you do error handling in SSIS? (http://www.learnmsbitutorials.net/ssis-error-handling.php)
+
+During ETL process we transfer millions of records from source to destination during this transfering there might be one or two multiple data row errors. These errors can cut off tranfering of records and if we want to load proper data to destination without any error records then it is important to catch that records that can cause an error.
+
+This log error will help us to fix an issue as ASAP or it will help us to know what problem exactly occured.
+
+When working with SSIS data flow, you will get many SSIS component divided in three sectors i.e. sources, transformation and destination. These many data flow components used during ETL process supports error outputs to handle errors. In the SSIS component we can specify how we want component to behave for example if we want an error output during error occured or during truncation occured. SSIS allows a developer to create an error output through which error rows are directed from secondary pipe.
+
+This secondary pipe can be connected as a input to another transformation component or destination component.For example we can connect error output from derived column to ADO.NET destination or from derived column to Flat file destination we can choose any combination that suits our requirement.
+
+Error outputs contains bad rows along with ErrorColumns, ErrorCode and ErrorDescription.
