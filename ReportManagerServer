@@ -1,0 +1,21 @@
+What is the difference between REPORT MANAGER and REPORT SERVER:
+
+The Report Server defines the nature of the installation of SQL Server Reporting Services.
+
+It comes in a native and Share Point mode. Native mode is the default and used in 80% of the industry. 
+
+The Report Server database contains all properties, objects and metadata related to an SSRS unit. So, a Report Server is the tool that works behind the Report Manager. 
+It is responsible for authentication, data processing, rendering and delivery options.
+
+The Report Manager gives us the capacity to administer the Report Server.
+
+It is the web-based interface that can be used to access and manage SSRS reports. The Report Manager is not available in SharePoint mode.
+
+End users can run reports from Report Manager, create subscriptions, and publish their own reports if they have permission.
+
+In a recent project I was working on I used the Report Manager to setup users and give access to specific reports to the relevant managers and individuals who needed to view them.
+
+I also setup a Subscription to send specific reports to certain Managers on a weekly basis. They needed these reports first thing on a Monday morning and also every Friday morning. The Report Manager helped me to set these report subscriptions up for them.
+
+The important things to remember when setting up Subscriptions via the Report Manager is to make sure the specific report and it's children's Data Source is correctly setup all with the correct Credentials. Do not check the "try to impersonate the user..." box, it will test correctly but not allow a new Subscription to be created, unless you know what you're doing. If you're using the "Windows File Share" option for the Destination of the Report, make sure your path is in the correct Network format: 
+"\\ComputerName\Users\Mark\Documents", and once again enter the correct Credentials.
