@@ -1,0 +1,121 @@
+What is the difference between UNION and UNION ALL?
+
+UNION and UNION ALL combines the result sets of two or more SELECT statements.
+ There are a few things to consider before using these 2 commands.
+ 
+
+The datatypes of the 2 result sets must be compatible.
+ 
+They must have the same number of columns.
+
+And the columns must be in the same order.
+
+
+UNION and UNION ALL are virtually the same except that UNION ALL returns all values from the 2 datasets,
+ this includes any duplicates,
+ while UNION does not return any duplicate rows.
+ I removes all duplicates.
+
+
+The other difference between UNION and UNION ALL is that UNION ALL is faster.
+ The reason it is faster is because it does not need to take the additional steps of doing a resource 
+ intensive DISTINCT SORT and removal of any duplicates it finds.
+
+
+In a recent project I worked on,
+ I had to INSERT a bunch of rows into a table and because I didn't want any duplicate rows in the table,
+ I used the UNION command to INSERT the data.
+
+
+In the same project I had some data that I knew had no duplicates so I chose to use the UNION ALL 
+command because UNION ALL works a lot faster than the UNION command.
+
+
+It did not make sense to have the UNION command use extra resources to SORT and check for non-existant
+duplicates to remove.
+
+
+In another recent project I needed to compare the "Sum of Line Total" column from a Sales Order Detail 
+table with the "SubTotal" column from a Sales Order Header table because I suspected there were some 
+rounding differences between the 2 totals which should have had exactly the same values.
+ 
+
+So,
+ in this case I used the UNION command to make sure there were no duplicates.
+ As a result,
+ with the help of the GROUP BY,
+ HAVING,
+ and WHERE clauses,
+ the data displayed very conveniently where row 1 was from select statement 1 and row 2 was from select statement 2,
+ and so forth,
+ for the entire combined resultset.
+
+
+This allowed me to quickly compare the total values and see where the differences originated.
+ 
+
+If I had used the UNION ALL command,
+ I would have had to contend with too much data and perhaps some confusion due to the duplicate records.
+
+
+These are the differences between UNION and UNION ALL.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What is the difference between UNION and UNION ALL?
+
+UNION and UNION ALL combines the result sets of two or more SELECT statements. There are a few things to consider before using these 2 commands. 
+
+The datatypes of the 2 result sets must be compatible. 
+They must have the same number of columns.
+And the columns must be in the same order.
+
+UNION and UNION ALL are virtually the same except that UNION ALL returns all values from the 2 datasets, this includes any duplicates, while UNION does not return any duplicate rows. I removes all duplicates.
+
+The other difference between UNION and UNION ALL is that UNION ALL is faster. The reason it is faster is because it does not need to take the additional steps of doing a resource intensive DISTINCT SORT and removal of any duplicates it finds.
+
+In a recent project I worked on, I had to INSERT a bunch of rows into a table and because I didn't want any duplicate rows in the table, I used the UNION command to INSERT the data.
+
+In the same project I had some data that I knew had no duplicates so I chose to use the UNION ALL command because UNION ALL works a lot faster than the UNION command.
+
+It did not make sense to have the UNION command use extra resources to SORT and check for non-existant duplicates to remove.
+
+In another recent project I needed to compare the "Sum of Line Total" column from a Sales Order Detail table with the "SubTotal" column from a Sales Order Header table because I suspected there were some rounding differences between the 2 totals which should have had exactly the same values. 
+
+So, in this case I used the UNION command to make sure there were no duplicates. As a result, with the help of the GROUP BY, HAVING, and WHERE clauses, the data displayed very conveniently where row 1 was from select statement 1 and row 2 was from select statement 2, and so forth, for the entire combined resultset.
+
+This allowed me to quickly compare the total values and see where the differences originated. 
+
+If I had used the UNION ALL command, I would have had to contend with too much data and perhaps some confusion due to the duplicate records.
+
+These are the differences between UNION and UNION ALL.
