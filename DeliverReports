@@ -4,14 +4,19 @@ As a BI developer at Cardinal Financial, I had the
 opportunity to build and deliver reports to end users.
 
 The Report Server provides 2 methods of setting up report 
-subscriptions for report delivery, one is the standard or 
-genereal method and the other is the data driven method. 
+subscriptions for the delivery of reports, the one is the 
+standard or general method and the other is the data 
+driven method. 
 
-I have used both methods. So, after completing my reports, 
-I deploy them to the Report Server and make sure everything 
-is working well and running as expected before setting up
-any subscriptions. I make sure I have the correct report
-users matched to the correct report.
+As part of my daily duties I have used both methods, 
+sometimes one more than the other. So, after completing 
+my reports, I deploy them to the Report Server, 
+sometimes another team member gets to do the honors 
+but I tend to make 100% sure that everything is 
+working well and running as expected before setting up 
+any subscriptions. I make sure I have the correct report 
+user's parameters are matched to the correct report. And
+that everything is matched properly.
 
 I then use the Report Manager to setup either a Standard or 
 data driven Subscription.
@@ -22,18 +27,56 @@ that does not change. So it does not have parameters and access
 to these reports is relatively easy and without any retrictions.
 
 A data driven report is one that is dynamic and is created based 
-on parameters and delivered based on user access permissions. So,
-a user is given access to specific reports based on their access
-level.
+on parameters and delivered based on what access each specific 
+user of that report has, what pemissions they have. So,
+a user is given access to specific reports, for example as a 
+BI Developer with Cardinal Financial, I was tasked to deliver
+reports to various parts of the country, as well as overseas.
 
-The parameters also include report specific parameters and 
-the application format.
+Sometimes the managers required reports for different specific
+requirements, so I would setup the parameters to meet that 
+requirement accordingly and sometimes it had something to do
+with the resources, personal and private information that was 
+only needed to be accessed by certain people, so it was 
+essential that I setup the parameters without any failure, no
+mistakes. I had to set them up so they were exactly right, and
+to make sure I ran a test run to make sure the correct person 
+is getting the reports and to just make sure everything is 
+running as it should.
+
+The parameters in this regard was very important and I managed 
+to do that pretty well. Once I had everything going and 
+running smoothly, I then scheduled the Subscriptions to run
+either daily, weekly, or monthly according to each requirement.
 
 I've sent out standard email subscriptions in the form of pdf 
 or excel attachments.
 
+I've also sent out report to a FileShare destination and those 
+who had access permissions could see their reports. The access
+permissions were managed from the users end via their policies. 
+
 I've sent out emails that contain hyperlinks to the relevant 
-report and links to a secure fileshare folders.
+reports which were secured requiring a username and password
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
