@@ -1,7 +1,10 @@
 How do you optimize SQL Queries?
 
-Learning how to index properly is the best thing you can do to improve the performance of your SQL queries.
- Indexes allow for quicker access to the database in typical situations.
+Learning how to index properly is the best thing 
+you can do to improve the performance of your 
+SQL queries. Indexes allow for quicker access 
+to the database in typical situations.
+
  Database novices often find indexes mysterious or difficult.
  They either index nothing or they try to index everything.
  Of course,
