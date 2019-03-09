@@ -1,11 +1,54 @@
 What is Stored Procedure?
 
-A stored procedure in SQL Server is a group of one or more Transact-SQL statements. They Accept input parameters and return multiple values in the form of output parameters to the calling program.
+A stored procedure in SQL Server is a group of one or more 
+T-SQL statements. They Accept input parameters and return 
+multiple values in the form of output parameters to the 
+calling program.
 
-Contain programming statements that perform operations in the database. These include calling other procedures.
+It is good practice to use Stored Procedures for data 
+modification and data retrieval. Stored procedures 
+many provide benefits where Client applications don't 
+need to work with the data directly, they call the 
+SP instead. 
 
-Return a status value to a calling program to indicate success or failure (and the reason for failure).
+The underlying database schema can be modified without 
+having an impact on an application as long as the SP 
+is changed appropriately.
 
-Stored Procedures reduces server / client network traffic. The commands in a procedure are executed as a single batch of code. This can significantly reduce network traffic between the server and client because only the call to execute the procedure is sent across the network. Without the code encapsulation provided by a procedure, every individual line of code would have to cross the network.
+In terms of Security, Client applications can access 
+data through SP and other programmatic objects only. 
+Users do not have direct permissions on those 
+underlying objects
 
-Multiple users and client programs can perform operations on underlying database objects through a procedure, even if the users and programs do not have direct permissions on those underlying objects.
+For example, even if an end user uses their own 
+SQL Server Management Studio instead of the client 
+application that the user should use, the user still 
+cannot modify the data in an uncontrolled way directly 
+in the tables. 
+
+With regard to Performance, SPs can reduce network 
+traffic, because you can execute many statements 
+inside the SP within a single call to a SP. 
+
+This can significantly reduce network 
+traffic between the server and client because only the 
+call to execute the procedure is sent across the network.
+Without the code encapsulation provided by a procedure,
+every individual line of code would have to cross the 
+network.
+
+SQL Server optimizes and compiles the code an 
+application sends, by storing the optimized and 
+compiled code in memory. 
+
+The compiled execution plans for SP are held longer 
+in memory than the execution plans for ad hoc queries 
+so they get reused more frequently. 
+
+Usage: 
+Stored procedures accept input and can return output 
+parameters, so they can be easily coded to serve multiple users.
+
+
+
+
