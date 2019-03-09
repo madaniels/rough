@@ -1,33 +1,116 @@
 What is Trigger? What are the Types of Triggers?
 
-Triggers are database object. Basically these are special type of stored procedure that are automatically fired/executed when a DDL or DML command statement related with the trigger is executed. Triggers are used to assess/evaluate data before or after data modification using DDL and DML statements. These are also used to preserve data integrity, to control server operations, to audit a server and to implement business logic or business rule.
+Triggers are database object.
+ Basically these are special type of stored procedure 
+ that are automatically fired/executed when a DDL or 
+ DML command statement related with the trigger is 
+ executed.
+ 
+ Triggers are used to assess/evaluate data before 
+ or after data modification using DDL and DML statements.
+ These are also used to preserve data integrity,
+ to control server operations,
+ to audit a server and to implement business logic 
+ or business rule.
+
 
 DDL Triggers
-In SQL Server we can create triggers on DDL statements (like CREATE, ALTER, and DROP) and certain system defined stored procedures that perform DDL-like operations.
+In SQL Server we can create triggers on DDL 
+statements (like CREATE, ALTER, and DROP) and certain 
+system defined stored procedures that perform 
+DDL-like operations.
 
-Example : If you are going to execute the CREATE LOGIN statement or the sp_addlogin stored procedure to create login user, then both these can execute/fire a DDL trigger that you can create on CREATE_LOGIN event of Sql Server.
 
-We can use only FOR/AFTER clause in DDL triggers not INSTEAD OF clause means we can make only After Trigger on DDL statements.
+Example : If you are going to execute the CREATE
+LOGIN statement or the sp_addlogin stored procedure 
+to create login user, then both these can 
+execute/fire a DDL trigger that you can create on 
+CREATE_LOGIN event of Sql Server.
 
-DDL trigger can be used to observe and control actions performed on the server, and to audit these operations. DDL triggers can be used to manage administrator tasks such as auditing and regulating database operations.
+
+We can use only FOR/AFTER clause in DDL triggers not 
+INSTEAD OF clause means we can make only After 
+Trigger on DDL statements.
+
+
+DDL trigger can be used to observe and control 
+actions performed on the server,
+ and to audit these operations.
+ DDL triggers can be used to manage administrator 
+ tasks such as auditing and regulating database operations.
+
 
 DML Triggers
-In SQL Server we can create triggers on DML statements (like INSERT, UPDATE, and DELETE) and stored procedures that perform DML-like operations. DML Triggers are of two types
+In SQL Server we can create triggers on DML 
+statements (like INSERT, UPDATE, and DELETE) and stored 
+procedures that perform DML-like operations.
+ DML Triggers are of two types
 
 After Trigger (using FOR/AFTER CLAUSE)
-This type of trigger fires after SQL Server finish the execution of the action successfully that fired it.
+This type of trigger fires after SQL Server finish
+the execution of the action successfully that fired it.
 
-Example : If you insert record/row in a table then the trigger related/associated with the insert event on this table will fire only after the row passes all the constraints, like as primary key constraint, and some rules. If the record/row insertion fails, SQL Server will not fire the After Trigger.
+
+Example : If you insert record/row in a table then the 
+trigger related/associated with the insert event on 
+this table will fire only after the row passes all 
+the constraints,
+ like as primary key constraint,
+ and some rules.
+ If the record/row insertion fails,
+ SQL Server will not fire the After Trigger.
+
 
 Instead of Trigger (using INSTEAD OF CLAUSE)
-This type of trigger fires before SQL Server starts the execution of the action that fired it. This is differ from the AFTER trigger, which fires after the action that caused it to fire. We can have an INSTEAD OF insert/update/delete trigger on a table that successfully executed but does not include the actual insert/update/delete to the table.
+This type of trigger fires before SQL Server starts 
+the execution of the action that fired it.
+ This is differ from the AFTER trigger,
+ which fires after the action that caused it to fire.
+ We can have an INSTEAD OF insert/update/delete trigger 
+ on a table that successfully executed but does not 
+ include the actual insert/update/delete to the table.
 
-Example : If you insert record/row in a table then the trigger related/associated with the insert event on this table will fire before the row passes all the constraints, such as primary key constraint and some rules. If the record/row insertion fails, SQL Server will fire the Instead of Trigger.
+
+Example : If you insert record/row in a table then the 
+trigger related/associated with the insert event on 
+this table will fire before the row passes all the 
+constraints,
+ such as primary key constraint and some rules.
+ If the record/row insertion fails,
+ SQL Server will fire the Instead of Trigger.
+
 
 CLR Triggers
-CLR triggers are special type of triggers that based on the CLR (Common Language Runtime) in .net framework. CLR integration of triggers has been introduced with SQL Server 2008 and allows for triggers to be coded in one of .NET languages like C#, Visual Basic and F#.
+CLR triggers are special type of triggers that based 
+on the CLR (Common Language Runtime) in .net framework.
+ CLR integration of triggers has been introduced 
+ with SQL Server 2008 and allows for triggers to 
+ be coded in one of .NET languages like C#,
+ Visual Basic and F#.
 
-We coded the objects(like trigger) in the CLR that have heavy computations or need references to objects outside the SQL Server. We can write code for both DDL and DML triggers, using a supported CLR language like C#, Visual basic and F#. I will discuss CLR trigger later.
+
+We coded the objects(like trigger) in the CLR 
+that have heavy computations or need references 
+to objects outside the SQL Server.
+ We can write code for both DDL and DML triggers,
+ using a supported CLR language like C#,
+ Visual basic and F#.
+ I will discuss CLR trigger later.
+
 
 Logon Triggers
-Logon triggers are special type of trigger that fire when LOGON event of Sql Server is raised. This event is raised when a user session is being established with Sql Server that is made after the authentication phase finishes, but before the user session is actually established. Hence, all messages that we define in the trigger such as error messages, will be redirected to the SQL Server error log. Logon triggers do not fire if authentication fails. We can use these triggers to audit and control server sessions, such as to track login activity or limit the number of sessions for a specific login.
+Logon triggers are special type of trigger that fire 
+when LOGON event of Sql Server is raised.
+ This event is raised when a user session is being 
+ established with Sql Server that is made after the 
+ authentication phase finishes,
+ but before the user session is actually established.
+ 
+ Hence, all messages that we define in the trigger 
+ such as error messages,
+ will be redirected to the SQL Server error log.
+ Logon triggers do not fire if authentication fails.
+ We can use these triggers to audit and control 
+ server sessions, such as to track login activity or 
+ limit the number of sessions for a specific login.
+
