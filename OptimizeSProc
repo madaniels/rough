@@ -1,17 +1,65 @@
-How do you optimize SQL Queries and Stored Procedures? Explain tools, techniques and best practices you have used.
+How do you optimize SQL Queries and Stored Procedures? Explain tools,
+ techniques and best practices you have used.
 
 Use SET NOCOUNT ON
 
-SQL Server returns informational messages when running select or DML operations. In case a procedure has many such statements a cursor or a while loop SQL Server will display lot of such messages increasing network traffic. These messages can be suppressed with SET NOCOUNT ON and can increase performance by decreasing network traffic.
+SQL Server returns informational messages when running select or DML operations.
+ In case a procedure has many such statements a cursor or a while loop 
+ SQL Server will display lot of such messages increasing network traffic.
+ These messages can be suppressed with SET NOCOUNT ON and can increase 
+ performance by decreasing network traffic.
 
-Use fully qualified procedure name. A fully qualified object name is database.schema.objectname. When stored procedure is called as schemaname.procedurename, SQL Server can swiftly find the compiled plan instead of looking for procedure in other schemas when schemaname is not specified. This may not be a great boost to the performance but should be followed as best practice. All objects inside procedure should also be referred as schemaname.objectname.
 
-sp_executesql instead of Execute for dynamic queries. The sp_executesql allows for cache plan reuse and protects from SQL Injection. 
+Use fully qualified procedure name.
+ A fully qualified object name is database.
+schema.
+objectname.
+ When stored procedure is called as schemaname.
+procedurename,
+ SQL Server can swiftly find the compiled plan instead of looking for 
+ procedure in other schemas when schemaname is not specified.
+ This may not be a great boost to the performance but should be 
+ followed as best practice.
+ All objects inside procedure should also be referred as schemaname.
+objectname.
 
-Using IF EXISTS AND SELECT. IF EXISTS is used to check existence of a record, object etc.. And is a handy statement to improve performance of queries where in one only wants to check existence of a record in a table instead of using that record/row in the query. When doing so use IF EXISTS(SELECT 1 from mytable) instead of IF EXISTS(Select * from mytable) as only thing we are interested in is to check the presence of record/s. So, if the query return 1 then record is present else it’s not. It’s needless to return all column values.
 
-Avoid naming user stored procedure as sp_procedurename. If a stored procedure begins with sp_ then SQL Server first searches it in master database and then in the current user database. This might cause slight performance issues and moreover it may result in wrong results if a stored procedure with same name exists in master database.
+sp_executesql instead of Execute for dynamic queries.
+ The sp_executesql allows for cache plan reuse and protects from SQL Injection.
+ 
 
-Use set based queries wherever possible. T-SQL is a set based language and thus loops don’t work well in here. Cursors and while loop are to be used only when a set based query is either expensive or can’t be formulated.
+Using IF EXISTS AND SELECT.
+ IF EXISTS is used to check existence of a record,
+ object etc.
+.
+ And is a handy statement to improve performance of queries where 
+ in one only wants to check existence of a record in a table instead 
+ of using that record/row in the query.
+ When doing so use IF EXISTS(SELECT 1 from mytable) instead of
+ IF EXISTS(Select * from mytable) as only thing we are interested 
+ in is to check the presence of record/s.
+ So,
+ if the query return 1 then record is present else it’s not.
+ It’s needless to return all column values.
 
-Keep transaction short and crisp. The longer the transaction the longer the locks will be held based on isolation level. This may result in deadlocks and blocking. Open a new query window and execute the below query.
+
+Avoid naming user stored procedure as sp_procedurename.
+ If a stored procedure begins with sp_ then SQL Server first searches 
+ it in master database and then in the current user database.
+ This might cause slight performance issues and moreover it may result 
+ in wrong results if a stored procedure with same name exists in master 
+ database.
+
+
+Use set based queries wherever possible.
+ T-SQL is a set based language and thus loops don’t work well in here.
+ Cursors and while loop are to be used only when a set based query is 
+ either expensive or can’t be formulated.
+
+
+Keep transaction short and crisp.
+ The longer the transaction the longer the locks will be held based 
+ on isolation level.
+ This may result in deadlocks and blocking.
+ Open a new query window and execute the below query.
+
