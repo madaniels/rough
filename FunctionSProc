@@ -1,17 +1,36 @@
 What are the differences between a Function and a Stored Procedure?
 
-Function must return a value but in Stored Procedure it is optional. Even a procedure can return zero or n values. Functions can have only input parameters for it whereas Procedures can have input or output parameters . Functions can be called from Procedure whereas Procedures cannot be called from a Function.
+Function must return a value but in Stored Procedure it is optional.
+ Even a procedure can return zero or n values.
+ Functions can have only input parameters for it whereas Procedures 
+ can have input or output parameters . Functions can be called from
+ Procedure whereas Procedures cannot be called from a Function.
 
-Procedure allows SELECT as well as DML(INSERT/UPDATE/DELETE) statement in it whereas Function allows only SELECT statement in it.
 
-Procedures can not be utilized in a SELECT statement whereas Function can be embedded in a SELECT statement.
+Procedure allows SELECT as well as DML(INSERT/UPDATE/DELETE) 
+statement in it whereas Function allows only SELECT statement in it.
 
-Stored Procedures cannot be used in the SQL statements anywhere in the WHERE/HAVING/SELECT section whereas Function can be.
 
-Functions that return tables can be treated as another rowset. This can be used in JOINs with other tables.
+Procedures can not be utilized in a SELECT statement whereas 
+Function can be embedded in a SELECT statement.
 
-Inline Function can be though of as views that take parameters and can be used in JOINs and other Rowset operations.
 
-Exception can be handled by try-catch block in a Procedure whereas try-catch block cannot be used in a Function.
+Stored Procedures cannot be used in the SQL statements anywhere 
+in the WHERE/HAVING/SELECT section whereas Function can be.
 
-We can use Transactions in Procedure whereas we can't use Transactions in Function.
+
+Functions that return tables can be treated as another rowset.
+ This can be used in JOINs with other tables.
+
+
+Inline Function can be though of as views that take parameters 
+and can be used in JOINs and other Rowset operations.
+
+
+Exception can be handled by try-catch block in a Procedure 
+whereas try-catch block cannot be used in a Function.
+
+
+We can use Transactions in Procedure whereas we can't use 
+Transactions in Function.
+
