@@ -1,17 +1,37 @@
 Tell me about your SQL experience
 
-As a BI Developer, I created Stored 
-Procedures, Triggers, 
-User-Defined Functions, Views for 
-handling business logic and the 
-functionality of various modules.
+Working as a Business Intelligence 
+Developer for Cardinal Financial, 
+I have gained good experience using 
+SQL Server 2014 & 2017, 
+Visual Studio 2013 & 2017. 
 
-I reviewed and enhanced existing 
-UDF and Sprocs. I etablished 
-referential integrity, data 
-consistency, indexing and 
-data cleanup procedures to 
-maintain high quality data 
-for reporting purposes.
+Using T-SQL, I have created Tables, 
+Views, User Defined Functions, 
+Common Table Expressions, 
+Temporary tables, Indexes, 
+Stored Procedures, Triggers 
+and so forth.
 
+I have acquired in-depth 
+understanding of various database
+concepts like the creation of
+database objects, the importance
+of database backup, performance 
+tuning, query optimization.
 
+I've used various DML operations
+to create and modify database 
+objects such as Tables, Views,
+Triggers, UDF, simple and complex
+Stored Procedures, Temperory data
+structures like Common Table 
+Expressions (CTE), Temperory Tables
+and Variables.
+
+Using DML operations I have 
+performed various Inserts,
+Updates, Deletes, and Select
+operations to modify and retrieve
+the data according to the business
+requirements.
