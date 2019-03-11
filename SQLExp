@@ -3,8 +3,8 @@ Tell me about your SQL experience
 Working as a Business Intelligence 
 Developer for Cardinal Financial, 
 I have gained good experience using 
-SQL Server 2014 & 2017, 
-Visual Studio 2013 & 2017. 
+SQL Server 2014 & 2017, Visual 
+Studio 2013 & 2017. 
 
 Using T-SQL, I have created Tables, 
 Views, User Defined Functions, 
@@ -13,18 +13,19 @@ Temporary tables, Indexes,
 Stored Procedures, Triggers 
 and so forth.
 
-I have acquired in-depth 
-understanding of various database
+I have gained in-depth 
+understanding of database
 concepts like the creation of
 database objects, the importance
 of database backup, performance 
-tuning, query optimization.
+tuning, and query optimization.
 
 I've used various DML operations
 to create and modify database 
 objects such as Tables, Views,
-Triggers, UDF, simple and complex
-Stored Procedures, Temperory data
+Triggers, User Defined Functions, 
+simple and complex Stored 
+Procedures, Temperory Data
 structures like Common Table 
 Expressions (CTE), Temperory Tables
 and Variables.
@@ -35,3 +36,121 @@ Updates, Deletes, and Select
 operations to modify and retrieve
 the data according to the business
 requirements.
+
+I have also used Transactional 
+commands like COMMIT, ROLLBACK,
+and SET Transactions to specify
+the characteristics of the 
+transaction and to commit or 
+rollback a transaction based 
+on the conditions or in the 
+case of errors. 
+
+I have experience with creating
+Indexes and Constraints while
+defining the table structures, 
+in order to establish data 
+integrity, and for optimal 
+query performance.
+
+I am also well versed with 
+using execution plans, 
+SQL Profiler, and the 
+Tuning Advisor, to tune and
+optimize queries.
+
+I've had opportunities to use
+a wide range of functions like
+the DATE, CAST, CONVERT 
+functions, While Loops, CTEs, 
+and UDFs to apply the business
+logic. 
+
+I am also knowlegeable in 
+building OLTP and OLAP data 
+Models using the Star and
+Snowflakes Schemas.
+
+In a recent project I worked on
+with Cardinal Financials, 
+part of the requirements 
+was to create a Data Warehouse 
+for reporting purposes.
+
+I used the existing SQL database 
+to create the Denormalized 
+datasets, pulled the data from 
+numerous tables using complex
+JOIN queries, then manipulated
+it using several System 
+Functions like:
+
+CASE WHEN statements to apply 
+conditions, 
+
+CAST functions to change the 
+Data Types, 
+
+CharIndex and Substring 
+functions, and some 
+arithmatical and logical 
+operators involving complex
+subqueries.
+
+I stored the Denormalized 
+datasets into Denormalized
+Temperory Tables and used
+those to load the Fact and
+Dimensions by creating a
+Stored Procedure for 
+performing incremental
+loading of the database 
+with Slowly Changing 
+Dimension, using the 
+MERGE Statement.
+
+I make sure I follow Best
+Practices when creating 
+queries and implementing
+database concepts. 
+
+I also include detailed 
+comments with the code, 
+providing the business 
+logic for co-worker or 
+future review.
+
+I strive to keep up to 
+date with current tools
+and techniques in the 
+market so as to benefit
+the company.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
