@@ -5,39 +5,104 @@ the last 2 years and counting, and I
 worked as a BI Developer for the 3 years 
 before that.
 
-As a BI Developer I've worked on SSIS and 
-Developed Integration Services (SSIS) 
-packages for the extracting of data from 
-Flat Files, XML files, CSV files, Excel files, 
-and SQL Server, and Transformed and Loaded 
-the data to a data warehouse.
+Working as a Business Intelligence 
+Developer for Cardinal Financial, I 
+have gained good experience using 
+SQL Server 2014 & 2017, Visual Studio 
+2013 & 2017.
+
+As a BI developer I have experience 
+building ETL solutions for numerous 
+projects. I have worked with various 
+data sources such as Object Linking 
+and Embedding, Database (OLEDB), 
+Excel, XML, flat files such as .txt 
+and .csv files. 
+
+For the various data destinations, 
+I've used the OLEDB, Excel, and 
+Flat File destination transformations.
+
+I’ve extracted and transformed data 
+using various Control flow and Data 
+flow components such as Execute SQL 
+Task, Script task, Send Mail task, 
+Foreach Loop and Sequence containers
 
 In a previous project I worked on,
- I developed SSIS packages to bring data 
- from existing OLTP databases to the new 
- data warehouse by  performing different 
- transformations like lookup transformations,
- merge joins, derived columns, 
- conditional split, and data conversion with 
- multiple data flow tasks.
+I developed SSIS packages to bring data 
+from existing OLTP databases, XML files,
+and Excel files, to the new data 
+warehouse by performing different 
+transformations.
 
-I implemented Various Error handling and 
-Event Handling Techniques in SSIS to ensure 
-efficient package execution.
+I designed these packages Using Control 
+Flow Tasks like For Loop Container, For 
+Each Loop Container, Sequential Container, 
+Execute SQL Task and Data Flow Tasks.
+
+I used a Foreach Loop Container to house 
+the Data Flow Task to iterate through a set
+of Excel files in a folder using Variables
+and the Enumerator since these files had the
+same meta-data.
+
+Then I used a C# Script Task to load another
+set of Excel files that had different meta-data.
+
+I performed Data Conversion on the Excel and XML
+sources, and then loaded these files and the data
+from the OLTP database, into Staging tables and 
+archived the Excel and XML source files and 
+appended them with date and time information 
+using the File System Task.
+
+For the Data Validation and Error Handling
+I Extracted the Staged Data and made 
+use of a Derived Column Transformation to 
+remove unwanted dashes, and brackets from 
+phone numbers and Zip codes, and also 
+unecessary letters in Zip codes.
+
+Following that, I used a Conditional Split 
+Transformation filtered and rerouted the 
+Good Data from the Bad Data which had 
+unwanted NULL rows, incorrect number of 
+digits for phone numbers, Social Security 
+Numbers, and Zip codes.
+
+In order to send the Bad Data back for 
+correction and validation via email, 
+we used an Execute SQL Task and SendMail 
+Stored Procedure, using the Database Mail 
+in SQL Server.
 
 I developed logs for the ETL load at package 
 level and task level to log the number of 
 records processed by each package and each 
 task in a package using SSIS.
 
-I developed SSIS jobs and scheduled packages 
-using SQL server management studio for the 
-daily load.
+Finally, I developed SSIS jobs and scheduled 
+packages using SQL server management studio 
+for the daily load.
 
-I designed packages Using Control Flow Tasks 
-like For Loop Container, For Each Loop 
-Container, Sequential Container, Execute SQL 
-Task and Data Flow Tasks.
+In Summary, I extracted and transformed 
+the data using various Control flow and Data 
+flow components.
+
+The first ETL process was from source to 
+Staging Table and the second ETL process
+was from the Staged tables to the ODS
+database after Error Handling and Data
+Validation.
+
+This is my SSIS experience.
+
+
+
+
+
+
 
 I created stored procedures, triggers, 
 user-defined functions, views handling business 
