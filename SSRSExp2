@@ -1,0 +1,70 @@
+Tell me about your SSRS experience:
+
+As a BI Developer at Cardinal Financial, I
+created Sub-Reports, Drill through, Drill down,
+Parameterized, Matrix reports, and Dashboards 
+using SSRS.
+
+I defined the report layout and identified datasets 
+for the report generation. Developed reports using 
+complex T-SQL queries, user defined functions, 
+stored procedures and views.
+
+I also enhanced SSRS report performance using 
+numerous techniques.
+
+I Managed Report Subscriptions, standard and data driven.
+
+In a recent project with Guidant Global, who hire and track 
+large numbers of employees and contingent workers all 
+across the US and around the world.
+
+One of the requirements was for a dashboard to track the 
+effectiveness and bottle-knecks in the hiring process as
+well as the response-ratio of their vendors and quality
+of candidates in terms of how many stayed on the project
+after a 30 day period and also various client locations
+that candidates were placed at.
+
+I built reports using various charts and graphs to show 
+the KPIs on the dashboard. I also created maps to show 
+the various locations where the workers are placed.
+
+I built various matrix reports for details about each
+worker, such as the start-date, term duration, 
+contract end-date, location working at, and so forth.
+
+To feed these reports I built datasets by creating
+queries and complex Stored Procedures so SQL Server
+could do the heavy-lifting of aggregations and 
+calculations, to enhance report rendering time
+and improve performance.
+
+I created parameters to make the reports dynamic and
+created drill-through functionality to navigate from 
+a report item on the dashboard to a drill-down 
+report to show or hide the report details.
+
+I published the reports to the report server and setup
+permission and securities, creating data-driven
+subscriptions delivered via email, share-drive, on a
+daily, weekly, monthly basis depending on the 
+requirements for each report.
+
+I strive to deliver the best possible user-friendly
+reports to give the users the best possible utilization
+of their data that can help them make informed decisions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
