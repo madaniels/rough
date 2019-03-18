@@ -62,6 +62,21 @@ Once I fully configured the Cube, I
 ensured the correct permissions, and
 processed and deployed the Cube.
 
+In summary, I first made sure the 
+data was extracted, transformed, 
+clean, and loaded into an ODS 
+database. Then created a Star Schema, 
+with Facts, Dimensions. I loaded the 
+data into the OLAP database and ensured
+historical data was maintained using 
+Type II Slowly Changing Dimension.
+
+And finally I used SSAS to create the 
+Cube based on the Fact and Dimensions
+I created, and also a Time Dimension 
+hierarchy. I then processed the Cube
+and Deployed it.
+
 The power of the Star Schema, Facts, 
 Dimensions, and the Cube is undeniable, 
 something every business or organization 
