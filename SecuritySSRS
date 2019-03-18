@@ -26,5 +26,33 @@ and can use the Report Builder or other
 client applications that execute 
 report definitions.
 
+I have implimented security at the Report
+Level where I can select which tasks 
+a specific Role can perform on a specific
+report. I have implemented requirements
+where the user Role I limited to just
+viewing and subscribing to report, as 
+well as Roles that I enabled Content 
+Management, Plublishing, and so forth.
+
+I implented User access Credential 
+requirements which means that the user
+has to have specific credentials for 
+access to specific data sources.
+
 
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
