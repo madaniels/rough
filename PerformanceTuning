@@ -1,0 +1,59 @@
+SSIS - How do you do performance tuning
+
+Performance Tuning is a way of optimizing 
+an SSIS package to run in such a way as 
+to use the least amount of resources and 
+to shorten the execution time.
+
+The first task to ensure performance
+optimization is to determine where in the
+ETL process the delays are occurring, the
+source, transformation, or the destination
+component.
+
+One way of seeing what is occurring during
+execution is to study the Progress tab 
+which contains all the information from
+start to the end of package execution,
+having all the warnings and errors.
+
+If performance is being stifled at the 
+source component, and tables are being
+used, then I usually check to see 
+whether all the columns being extracted
+are really needed, if not, I exclude them
+from the Stored Procedure being used to
+during this phase, by using a WHERE clause
+to filter them out.
+
+Next, I make sure that appropriate tasks 
+are run parallel to each other using the 
+Sequence Container. This provides a 
+substatantial boost to performance versas
+running every task sequentially.
+
+When I find delays in the Transformation 
+component, I review the Transformations 
+being used and make sure there are no
+unecessary Transformations that are
+blocking, like the Aggregate and the 
+Sort Transformations.
+
+And similarly with regard to 
+semi-blocking Transformations like the
+JOIN Transformation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
