@@ -46,6 +46,20 @@ maintain an updated database.
 The Data Warehouse was now ready for
 the Cube.
 
+After modelling the Fact and Dimension 
+tables, I used SSAS to built the Cube, 
+added a Time Dimension hierarchy so the 
+user would be free to wander around the 
+Reports and do as much slicing and 
+dicing of the data as they desired, 
+by day, by week, by Month, Quarter, 
+and Year.
+
+The power of the Star Schema, Facts, 
+Dimensions, and the Cube is undeniable, 
+something every business or organization 
+should take advantage of, given all 
+that it can provide.
 
 
 
