@@ -43,7 +43,8 @@ Loan Amount, I used a SQL MERGE to run
 a SSIS Slowly Changing Dimension to 
 maintain an updated database.
 
-
+The Data Warehouse was now ready for
+the Cube.
 
 
 
