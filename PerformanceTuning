@@ -43,6 +43,41 @@ And similarly with regard to
 semi-blocking Transformations like the
 JOIN Transformation.
 
+So I usually try to avoid asynchronous
+Transformation and do things like 
+Sorting and Aggregation at the Source
+phase, if at all possible.
+
+To performance tune the Destination
+Component, I use the "Fast Load"
+option because it loads the data in
+Bulk vs the standard "Table or View"
+load which loads data row-by-row.
+
+If the destination tables have indexes,
+I usually specify the number of rows 
+per batch which reduces the number of 
+rows to be Sorted. Alternatively, I 
+drop the Index, load the data and then
+rebuild the Index again.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
