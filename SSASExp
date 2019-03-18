@@ -1,12 +1,34 @@
 Tell me about your SSAS experience
 
 During my time working on a project for
-Cardinal Financials, one of the Mortgage 
-Projects entailed creating Fact and 
-Dimension tables including a Time 
-Dimension Hierarchy, an SSAS Cube,
-and an SSRS Report having the Cube as a 
-source.
+Cardinal Financials, one of the project 
+requirements was to create a Data 
+Warehouse for one of the OLTP databases 
+which was very large and had the usual 
+Mortgage Loan related transactional 
+data like the borrower, loan, 
+property, and the financial information.
+
+This of course required the
+creation of Fact and Dimension tables 
+that were suitable for an SSAS Cube 
+which would be a source for the 
+SSRS Reporting that they required.
+
+But before getting to this final phase 
+of creating the Cube, I went through the
+necessary process of automating the 
+ETL process using SSIS, and then 
+eventually loaded the data from the 
+ODS database 
+
+
+
+
+
+
+
+
 
 
 
