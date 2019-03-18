@@ -32,6 +32,13 @@ Sequence Container. This provides a
 substatantial boost to performance versas
 running every task sequentially.
 
+And next, I check that the Buffer Size is
+appropriate for the data being pulled into
+SSIS. I enable logging of the 
+BufferSizeTuning event to learn about how 
+many rows a buffer contains and adjust
+accordingly.
+
 When I find delays in the Transformation 
 component, I review the Transformations 
 being used and make sure there are no
