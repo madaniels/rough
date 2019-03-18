@@ -1,8 +1,8 @@
-Tell me about your SSAS experience
+sTell me about your SSAS experience
 
 During my time working on a project for
 Cardinal Financials, one of the project 
-requirements was to create a Data 
+requirement was to create a Data 
 Warehouse for one of the OLTP databases 
 which was very large and had the usual 
 Mortgage Loan related transactional 
@@ -15,12 +15,35 @@ that were suitable for an SSAS Cube
 which would be a source for the 
 SSRS Reporting that they required.
 
-But before getting to this final phase 
+But before getting to the phase 
 of creating the Cube, I went through the
 necessary process of automating the 
-ETL process using SSIS, and then 
-eventually loaded the data from the 
-ODS database 
+ETL processes using SSIS and cleaned,
+transformed, and loaded the data into an
+ODS database where short-term reports
+could be created while I continued to 
+develop the more efficient Data 
+Warehouse and SSAS Cube.
+
+I then went ahead and developed a 
+multidimentional Star Schema which 
+consisted of a Fact table and 3 
+dimensions. And as it is with all large
+databases, I had to be particularly
+precise about ensuring the Foreign Keys 
+were pointing to the correct Primary 
+keys of the dimension tables and ensured
+that the the correct measures were set
+for aggregation so they could provide 
+meaningful value to the business. 
+
+In order to keep the history of specific 
+information like changed Last Name and 
+Loan Amount, I used a SQL MERGE to run
+a SSIS Slowly Changing Dimension to 
+maintain an updated database.
+
+
 
 
 
