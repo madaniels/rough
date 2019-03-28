@@ -1,19 +1,32 @@
 How do you handle security in SSRS? 
 Explain with use-case examples.
 
+Handling SSRS report security is done
+at the Data Source level which is usually
+managed by the DBA and the Report
+Server level which is predined at two
+levels, System Admin and System User.
+
+The System Administrator Role by default
+has permissions over the whole Report
+Server.
+
+Setting the security can be done at the
+Group or Individual level.
+
 As a BI Developer for Cardinal Financials
 I developed numerous Reports and 
 Subscriptions, and was tasked to grant
 the specific access and to ensure their
 security at the Report Server level.
 
-The Report Manager allows me to grant
+The Report Manager allowed me to grant
 specific access to Users or Groups.
 
 From the Report Manager home page and 
 Site Settings I assign users or groups
-to a system role sometimes create or 
-modify a system role definition.
+to a System Role and sometimes I create 
+or modify a System Role Definition.
 
 The System Admin Role has the ability 
 to View and modify system role 
@@ -30,9 +43,9 @@ I have implimented security at the Report
 Level where I can select which tasks 
 a specific Role can perform on a specific
 report. I have implemented requirements
-where the user Role I limited to just
-viewing and subscribing to report, as 
-well as Roles that I enabled Content 
+where the user Role is limited to just
+viewing and subscribing to a report, as 
+well as Roles where I enabled Content 
 Management, Plublishing, and so forth.
 
 I implimented User access Credential 
