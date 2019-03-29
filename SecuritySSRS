@@ -1,6 +1,17 @@
 How do you handle security in SSRS? 
 Explain with use-case examples.
 
+In SSRS security is handled in two
+ways, Authentication and Authorization,
+
+We can use the analogy of Authentication
+being the Gate to your property and
+Authorization as the Door to your House.
+You first come through the Gate to get to
+the House.
+
+So the 
+
 Handling SSRS report security is done
 at the Data Source level which is usually
 managed by the DBA and the Report
