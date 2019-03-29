@@ -57,14 +57,32 @@ and can use the Report Builder or other
 client applications that execute 
 report definitions.
 
-I have implimented security at the Report
-Level where I can select which tasks 
-a specific Role can perform on a specific
+After setting up the Report Server level
+Roles, I implimented security at the Report
+Level where I selected which tasks 
+a specific Role could perform on a specific
 report. I have implemented requirements
-where the user Role is limited to just
-viewing and subscribing to a report, as 
-well as Roles where I enabled Content 
-Management, Plublishing, and so forth.
+where the user Role was the Browser	role
+which allowed the User to view folders, 
+reports and subscribe to reports.
+
+I also setup users on specifice reports
+as Content Manager	where the user could
+manage content in the Report Server. 
+This includes folders, reports and 
+resources.
+
+I also setup users on specifice reports
+as Publisher	where the user could
+publish reports and linked reports 
+to the Report Server.
+
+I also setup users on specifice reports
+as Report Builder	where the user could
+view report definitions.
+
+Some had a combination of these roles
+on specific reports.
 
 I implimented User access Credential 
 requirements which means that the user
