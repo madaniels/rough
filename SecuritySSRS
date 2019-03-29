@@ -17,10 +17,10 @@ Server Domain and on the Authorization
 level, you must have been granted 
 access to specific databases amd datasets.
 
-So, handling SSRS report security is done
-at the Data Source level which is usually
+So, handling SSRS report security done
+at the Data Source level is usually
 managed by the DBA and the Report
-Server level which is predefined at two
+Server level is predefined at two
 levels, System Admin and System User.
 
 The System Administrator Role by default
@@ -28,7 +28,9 @@ has permissions over the whole Report
 Server.
 
 Setting the security can be done at the
-Group or Individual level.
+Group or Individual level, but the Group 
+is created at the Server Domain level, in
+other words, at the Gate not the door.
 
 As a BI Developer for Cardinal Financials
 I developed numerous Reports and 
@@ -69,7 +71,17 @@ requirements which means that the user
 has to have specific credentials for 
 access to specific data sources.
 
-See ALEXANDER video to complete
+I managed many different Admin and 
+User Roles applying many different
+access permissions to specific reports,
+some to groups and others to 
+individuals.
+
+So, the DBA setup the Authenticated
+groups and individuals and I merely
+applied those to the numerous reports
+at either Admin or User level on the
+Report Server.
 
 
  
