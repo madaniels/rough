@@ -1,41 +1,128 @@
 Tell me about your last project
 
-I am currently working as a Microsoft
-Power BI Developer with Guidant Global
-and my current contracting assignment
-is with a UK based, global talent
-acquisition, and managed workforce
-solution provider, as one of the Lead
-Power BI developers. The company hires
-and tracks hundreds of employees and
-candidates who are contracting in
-different States, all across the US,
-monitoring the entire process end to
-end, starting with requisition opening,
-tracking quality and quantity of
-submissions through various vendors,
-monitoring the progress through the
-selection process, tracking work
-orders, start date and end date of the
-assignment and so forth.
+For the last five years I've been
+working as a Business Intelligence
+Developer, two years as a Power BI
+Developer at Guidant Global, and three
+years as a Microsoft Business
+Intelligence Developer at Cardinal
+Financial. 
 
-Using Microsoft Power BI, I have
-implemented various data modeling,
-visualization and reporting techniques.
-I have loaded the data into Power BI
-from various sources such as Excel
-spreadsheet, SQL Server tables and
-performed various transformations using
-Query Editor. I have developed
-actionable Key Performance Indicators
-(KPI) such as vendor response time,
-hire ratios, requisition fill time,
-etc. using maps, line charts, cards,
-ribbon charts, scatter plots and
-different reporting layouts from the
-Power BI Marketplace.
+As a Microsoft Power BI Developer on a
+project with Guidant Global my current
+contracting assignment is with a UK
+based, global talent acquisition, and
+managed workforce solution provider. 
 
-While developing these metrices, I have
+The company hires and tracks hundreds
+of employees and candidates who are
+contracting in different States, all
+across the US and around the world.
+
+In my last project I worked in an Agile
+Software Development Life Cycle and
+have participated in Sprint Planning,
+Sprint Review and Daily Scrum
+meetings. 
+
+I was among the team of Power BI
+Developers that created Reports and
+Dashboards in monitoring the entire
+process end to end, starting with
+requisition opening, tracking quality
+and quantity of submissions through
+various vendors, monitoring the
+progress through the selection process,
+tracking work orders, start date and
+end date of the assignment and so
+forth.
+
+I received this data from different
+office locations and in Excel, XML, and
+OLEDB formats but with the help of
+Power BI Desktop, I extracted and
+transformed the data using the Query
+Editor, and performed data modelling to
+ensure the Relationships between the
+numerous tables were correct in order
+to accurately calculate the results and
+display the correct information in my
+reports.
+
+Once I completed the data extraction,
+transformations, Query Merging and
+Appending, transposing, Filling,
+Pivoting, and so forth, I modeled the
+data according to the business
+requirements, and then loaded the data
+into Power BI Desktop.
+
+I created numerous reports and
+published these to Power BI Services
+where I pin them to a few Dashboards.
+
+The main dashboard, I created to show a
+consolidated summary of four different
+areas that we were tracking,
+represented by several KPI's comparing
+them side by side. The KPIs always
+showed the numbers from last month.
+
+The KPI background showed what was
+selected, so if no filters are
+selected, it shows the trending for the
+last year, but if a specific month is
+selected, it shows just the numbers for
+that month. All the KPI's conformed to
+the filter selection.
+
+I created several slicers and filters:
+• Date slicers • company • Category, •
+division, • subdivisions
+
+These business areas are bookmarked to
+jump to another dashboard page for that
+business area. For example:
+
+For the Requisition Dashboard I created
+a Scatter plot, two KPIs along with
+vendor response rate. So when a
+requisition comes in, we looked at how
+many we sent out vs how many responded.
+This tells us how hard the position is
+to fill. I used colors on the map to
+show vendor response rate.
+
+I created a Spend Dashboard to kee
+track of suppliers who provide diverse
+candidates. So, if a supplier has a
+spike in the graph for diverse
+candidates in the current month, the
+forecast might show that it will go
+back down if this supplier rarely
+provides diverse candidates. For a
+supplier supplying 100% diversity, the
+forecast is projected to go up for this
+one supplier.
+
+Another dashboard I created was the
+Headcount dashboard that shows the KPIs
+for placements and contract ends.
+
+So for each Dashboard the user can
+drill through to the details pages to
+see the detailed information about the
+employees.
+
+In Summary, I have developed actionable
+Key Performance Indicators (KPI) such
+as vendor response time, hire ratios,
+requisition fill time, etc. using maps,
+line charts, cards, ribbon charts,
+scatter plots and different reporting
+layouts from the Power BI Marketplace.
+
+While developing these metrics, I have
 gained experience with DAX to create
 numerous complex calculated columns and
 measures, data modeling, drill down
@@ -47,4 +134,4 @@ securities and permission level while
 sharing reports. I have also
 Incorporated new features such as Q&A,
 sync slicers, bookmarks in Power BI
-desktop.
+desktop. 
