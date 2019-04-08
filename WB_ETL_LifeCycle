@@ -1,0 +1,125 @@
+Whiteboard The ETL LifeCycle
+
+Extract-Transform-Load refers to
+the process of extracting, transforming,
+and loading large volumes of source data
+into a new data store.
+
+This process happens because we ingest 
+data from a variety of sources like
+e-commerce web application Data from a 
+customer engagement system such as a 
+CRM like Salesforce, patient care data 
+from hospitals, customer financial data 
+relating to credit-worthiness, from open
+data sources on the internet, intranet 
+or Cloud, or from a type of data warehouse.
+
+We then reformat or regularize the data 
+fields before further processing.
+
+I've used SSIS to build various ETL 
+solutions and packages. SSIS allows you
+to extract data from various sources such 
+as Excel, XML, SQL Server, Access, Oracle, 
+csv, etc.
+
+When you gather data from various sources 
+it is not always formatted correctly, it's 
+not clean and it's not complete, so you 
+have to perform transformations on this data
+before you load it into your data warehouse
+in order to maintain the integrity of the 
+data.
+
+Let me explain by telling you about my 
+experience with ETL on a project for
+Cardinal Financial.
+
+I developed SSIS packages to bring data 
+from existing OLTP databases, XML files,
+and Excel files, to the new data 
+warehouse by performing different 
+transformations.
+
+So I built a package that consolidated
+the loan applications into the central
+loan application database. Within the 
+package I used the XML, Excel, and the
+OLEDB sources.
+
+I used a C# Script Task to extract a set 
+of Excel files to ensure it had all the 
+required fields.
+
+I performed Data Conversion on the Excel 
+and XML sources, because these were in the
+Unicode format, and then I loaded these 
+files and all the other data from the 
+OLTP database, into Staging tables.
+
+For the Data Validation and Error Handling
+I Extracted the Staged Data and made 
+use of a Derived Column Transformation to 
+remove unwanted dashes, and brackets from 
+phone numbers and Zip codes, and also 
+unecessary letters in Zip codes.
+
+Following that, I used a Conditional Split 
+Transformation filtered and rerouted the 
+Good Data from the Bad Data which had 
+unwanted NULL rows, incorrect number of 
+digits for phone numbers, Social Security 
+Numbers, and Zip codes.
+
+In order to send the Bad Data back for 
+correction and validation via email, 
+I used an Execute SQL Task and SendMail 
+Stored Procedure, using the Database Mail 
+in SQL Server.
+
+After putting in place all the required
+Data Transformations and Error Handlng, 
+I loaded this cleaned data to the ODS 
+database, ready for short-term reporting
+while I started work on developing the 
+more efficient Data Warehouse and SSAS 
+Cube.
+
+I then went ahead and developed a 
+multidimentional Star Schema which 
+consisted of a Fact table and numerous 
+dimensions.
+
+In order to keep the history of specific 
+information like changed Last Name and 
+Loan Amount, I used a SQL MERGE to run
+a SSIS Slowly Changing Dimension to 
+maintain an updated database.
+
+The Data Warehouse was now ready for
+the Cube.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
