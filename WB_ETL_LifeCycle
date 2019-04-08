@@ -7,16 +7,15 @@ into a new data store.
 
 This process happens because we ingest 
 data from a variety of sources like
-e-commerce web application Data from a 
-customer engagement system such as a 
-CRM like Salesforce, patient care data 
-from hospitals, customer financial data 
-relating to credit-worthiness, from open
-data sources on the internet, intranet 
-or Cloud, or from a type of data warehouse.
+e-commerce web application Data, 
+patient care data from hospitals, 
+financial data relating to customer 
+credit-worthiness, and from open
+data sources on the internet or Cloud, 
+or from a type of data warehouse.
 
-We then reformat or regularize the data 
-fields before further processing.
+We then reformat and shape the 
+data before further processing.
 
 I've used SSIS to build various ETL 
 solutions and packages. SSIS allows you
